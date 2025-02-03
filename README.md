@@ -31,7 +31,7 @@ The dataset consist of:
 - `paragraphs`: A list of paragraphs. Each paragraph is a dictionary contains `paragraph_text` and `annotations`
     - `paragraph_text`: A paragraph from the extracted text from the academic paper
     - `annotations`: A list of objects that contains `annotator`, `category`, `value` and `context`.
-        - `annotator`: Annotator reference or the llm model id
+        - `annotator`: Annotator reference, noted that `hybrid annotation` refers to the annotation based on large language model and a human.
         - `category`: The question category of this object
         - `value`: The answer of the question based on the `paragraph_text`
         - `context`: The original context in the `paragraph_text` which mentioned or indicated the `value`
