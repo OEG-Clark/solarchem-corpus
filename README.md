@@ -28,26 +28,41 @@ The dataset consist of:
 - Paper Information: Indication of paper, which contains `paper_title` and `paper_doi`
     - `paper_title`: The title of the solar chemistry paper
     - `paper_doi`: The DOI of the paper
-- paragraphs: A list of paragraphs. Each paragraph is a dictionary contains `paragraph_text` and `question_category`
+- `paragraphs`: A list of paragraphs. Each paragraph is a dictionary contains `paragraph_text` and `annotations`
     - `paragraph_text`: A paragraph from the extracted text from the academic paper
-    - `question_category`: A list of question categories which are indicated in the paragraph
+    - `annotations`: A list of objects that contains `annotator`, `category`, `value` and `context`.
+        - `annotator`: Annotator reference or the llm model id
+        - `category`: The question category of this object
+        - `value`: The answer of the question based on the `paragraph_text`
+        - `context`: The original context in the `paragraph_text` which mentioned or indicated the `value`
 
 ### Dataset Demo:
 
 ```json
-[
-    {
-        "paper_title": "1,3,5-Triphenylbenzene Based Porous Conjugated Polymers for Highly Efficient Photoreduction of Low-Concentration CO2 in the Gas-Phase System",
-        "paper_doi": "10.1002/solr.202100872",
-        "paragraphs": 
-        [
-            {
-                "paragraph_text": "XXX",
-                "question_category": ["catalyst", "co-catalyst"]
-            }, ...
-        ]
-    }, ...
-]
+
+{
+    "paper_title": "1,3,5-Triphenylbenzene Based Porous Conjugated Polymers for Highly Efficient Photoreduction of Low-Concentration CO2 in the Gas-Phase System",
+    "paper_doi": "10.1002/solr.202100872",
+    "paragraphs": [
+        {
+            "paragraph_text": "Developing near-infrared responsive (NIR) photocatalysts is very important for the development of solardriven photocatalytic systems.Metal sulfide semiconductors have been extensively used as visible-light responsive photocatalysts for photocatalytic applications owing to their high chemical variety, narrow bandgap and suitable redox potentials, particularly the benchmark ZnIn 2 S 4 .However, their potential as NIR-responsive photocatalysts is yet to be reported.Herein, for the first time demonstrated that upconversion nanoparticles can be delicately coupled with hierarchical ZnIn 2 S 4 nanorods (UCNPs/ZIS) to assemble a NIR-responsive composite photocatalyst, and as such composite is verified by ultraviolet-visible diffuse reflectance spectra and upconversion luminescence spectra.As a result, remarkable photocatalytic CO and CH 4 production rates of 1500 and 220 nmol g A1 h A1 , respectively, were detected for the UCNPs/ZIS composite under NIR-light irradiation (k !800 nm), which is rarely reported in the literature.The remarkable photocatalytic activity of the UCNPs/ZIS composite can be understood not only because the heterojunction between UCNPs and ZIS can promote the charge separation efficiency, but also the intimate interaction of UCNPs with hierarchical ZIS nanorods can enhance the energy transfer.This finding may open a new avenue to develop more NIR-responsive photocatalysts for various solar energy conversion applications.",
+            "annotations": [
+                {
+                    "annotator": "deepseek_r1",
+                    "category":"catalyst",
+                    "value":"UCNPs/ZIS composite",
+                    "context": "Herein, for the first time demonstrated that upconversion nanoparticles can be delicately coupled with hierarchical ZnIn₂S₄ nanorods (UCNPs/ZIS) to assemble a NIR-responsive composite photocatalyst"
+                },
+                {
+                    "annotator": "deepseek_r1",
+                    "category":"light source",
+                    "value":"Monochromatic",
+                    "context": "NIR-light irradiation (k !800 nm)"
+                },...
+            ]
+        }, ...
+    ]
+}
 
 ```
 
