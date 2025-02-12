@@ -1,0 +1,81 @@
+{
+    "paper_doi": "10.1039/c3ta15262f",
+    "paper_title": "A distinctive red Ag/AgCl photocatalyst with efficient photocatalytic oxidative and reductive activities",
+    "paragraphs": [
+        {
+            "paragraph_text": "Optical absorption, as the fundamental requirement of photocatalysts, still has immense space for development.Herein, we design a novel kind of red Ag/AgCl photocatalyst, by which a large improvement of visible-light harvesting was obtained.These strongly coloured semiconductor materials can be facilely prepared using a versatile glycerol-mediated method and exhibit a uniform coaxial tricubic morphology.The enhancement of optical absorption is not only ascribed to the synergy of Ag and AgCl but also attributed to the Mie scattering effect due to the distinct morphology.As expected, the asprepared red Ag/AgCl photocatalysts exhibit highly enhanced photocatalytic activities in the degradation of organic dyes, reduction of hexavalent chromium and conversion of CO 2 into liquid hydrocarbon fuels.By means of theoretical calculations, furthermore, this work provides an in-depth perspective for understanding the physical photocatalytic mechanism of the red Ag/AgCl system and should stimulate the development of silver halide-based photocatalysts for the exploitation and utilization of solar energy.",
+            "annotations": [
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl photocatalyst",
+                    "source": "Herein, we design a novel kind of red Ag/AgCl photocatalyst, by which a large improvement of visible-light harvesting was obtained.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl photocatalysts",
+                    "source": "As expected, the asprepared red Ag/AgCl photocatalysts exhibit highly enhanced photocatalytic activities in the degradation of organic dyes, reduction of hexavalent chromium and conversion of CO 2 into liquid hydrocarbon fuels.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "operation mode",
+                    "answer": "Batch",
+                    "source": "By means of theoretical calculations, furthermore, this work provides an in-depth perspective for understanding the physical photocatalytic mechanism of the red Ag/AgCl system and should stimulate the development of silver halide-based photocatalysts for the exploitation and utilization of solar energy.",
+                    "annotator": "hybrid annotation"
+                }
+            ]
+        },
+        {
+            "paragraph_text": "The red Ag/AgCl NPs were synthesized by a glycerol-mediated method according to previous reports with some modications. 28,40In a typical procedure, PVP (108 mg) and NaCl (22 mg) were dissolved in glycerol (15 mL) in a 50 mL round-bottom ask at 40 C under stirring for 15 min (the solution became pellucid).Then the mixture was heated to 60 C and 2 mL of glycerol solution (containing 52 mg AgNO 3 , dissolved at room temperature under stirring) was injected slowly into the reaction solution.The reaction was then maintained at 60 C for 1 h, and nally a milky dispersion was obtained.Aerwards, the reaction system was warmed up to 140 C at a heating rate of 2 C min A1 (within 40 min) and maintained at this temperature for another 20 min before it was cooled down to room temperature naturally.Finally, the reddish-brown suspension was treated by centrifugation (10 000 rpm, 5 min) to collect the resulted red NPs and rinsed thoroughly rst with acetone and then with water several times (at least 3 times).For comparison, normal Ag/AgCl materials are prepared by mixing aqueous AgNO 3 (0.01 mol L A1 ) and NaCl (0.01 mol L A1 ) solution directly under stirring. For the photodegradation experiments, the photocatalysts (50 mg) were suspended in 50 mL of MO solution (10 mg L A1 ) by sonication.Before the degradation reaction was carried out, the dispersion was kept stirring in the dark for preliminary adsorption (30 min).The light source was a 500 W xenon arc lamp (CHF-XM35-500 W, Beijing Trusttech Co. Ltd, China) equipped with a UV cut lter (l 420 nm).Specied dispersions (600 mL) were pipetted from the reaction system for real-time investigations at certain time intervals.The concentration of MO was monitored by UV-vis spectroscopy via recording the absorbance of the characteristic peak of MO at 463 nm where C and C 0 refer to the concentrations of MO at real-time t and at 10 mg L A1 , respectively. The photoreduction of Cr VI was performed with Ag/AgCl photocatalysts (20 mg) suspended in 19 mL of K 2 CrO 4 solution (15 mg L A1 ).The light source was the same as in the degradation reaction.The concentration of dissolved Cr VI was determined colorimetrically based on the diphenylcarbazide (DCP) method.In a typical procedure, 0.5 mL of ethylene diamine tetraacetic acid solution (EDTA, 4 mg mL A1 ) was added as the sacricial reagent, and the pH of the reaction suspension was adjusted to 2 with dilute HClO 4 (20-fold dilution).Then DCP solution (0.5 mL, 5 mg mL A1 in acetone) was added to develop a red-violet colour.The Cr VI concentration was measured by recording the absorbance of the characteristic peak at 540 nm by UV-vis spectroscopy.C and C 0 refer to the concentrations of Cr VI at real-time t and at 15 mg L A1 , respectively. The photoreduction of CO 2 into liquid fuels was carried out on a home-made reactor (see the ESI, Fig. S1 ).In a typical process, the photocatalysts (15 mg) were dispersed in NaHCO 3 solution (15 mL, 0.1 mol L A1 ) via 10 min of sonication.Prior to the irradiation (the light source was the same as in the degradation reaction), ultrahigh purity CO 2 was bubbled through the suspended solution at a rate of 0.7 L min A1 for 10 min to remove the air and saturate the solution with CO 2 .Aer reacting for 5 h, the suspension was centrifuged to collect the catalyst, and the product was analyzed using a gas chromatograph (Agilent GC 6890N, FID detector).The apparent quantum efficiency (AQE) is evaluated in terms of the ferrioxalate actinometer method, 28,41,42 and the details are described in the ESI. The electronic structure of the AgCl material was calculated by the WIEN2K program, 43,44 based on the full-potential linearized augmented plane wave (FP-LAPW) method.The exchangecorrelation (xc) energy was treated by the generalized gradient approximation of Perdew-Burke-Ernzenhof (GGA-PBE). 45The plane wave expansion cutoffs were 7.0 for the expanding wave function (RKMAX).1000 k-points were used in the complete Brillouin zone.The self-consistent calculations were considered to be converged when the energy difference is less than 10 A5 Ry.Since the GGA oen underestimates the band-gap values, the onsite Coulomb interaction or electron correlation (U) for Ag 4d was considered in the rotationally invariant way. 46A series of U values (8.00-13.92eV) had been tested.We employed the results from U 14 13.92 eV for discussion which was also adopted for Ag 3 PO 4 in a previous calculation. 47",
+            "annotations": [
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl",
+                    "source": "For the photodegradation experiments, the photocatalysts (50 mg) were suspended in 50 mL of MO solution (10 mg L A1 ) by sonication.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl",
+                    "source": "The photoreduction of Cr VI was performed with Ag/AgCl photocatalysts (20 mg) suspended in 19 mL of K 2 CrO 4 solution (15 mg L A1 ).",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl",
+                    "source": "In a typical process, the photocatalysts (15 mg) were dispersed in NaHCO 3 solution (15 mL, 0.1 mol L A1 ) via 10 min of sonication.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "lamp",
+                    "answer": "xenon",
+                    "source": "The light source was a 500 W xenon arc lamp (CHF-XM35-500 W, Beijing Trusttech Co. Ltd, China) equipped with a UV cut lter (l 420 nm).",
+                    "annotator": "hybrid annotation"
+                }
+            ]
+        },
+        {
+            "paragraph_text": "In summary, a novel kind of red Ag/AgCl photocatalyst with a uniform coaxial tri-cubic morphology is prepared via a facile and versatile approach.The optical absorption of the asprepared red photocatalysts is signicantly enhanced, which is not only ascribed to the synergy of Ag and AgCl but also attributed to the Mie scattering effect due to the distinct morphology.Experimental results show that the red Ag/AgCl photocatalysts exhibit highly efficient photocatalytic oxidative and reductive abilities in terms of degradation of MO and reduction of Cr VI and CO 2 .This work provides a novel perspective for understanding the physical photocatalytic mechanism of the red Ag/AgCl system and should stimulate the development of silver halide-based photocatalysts for the exploitation and utilization of solar energy. Fig. 1 Synthesis procedure, photographs and SEM images of the red Ag/AgCl NPs.(A) Schematic illustration of the synthesis of the red Ag/AgCl NPs, (B-D) SEM images of the as-prepared Ag/AgCl NPs with different resolutions, (E) digital image of the red AgCl dispersion, and (F-G) a magnified image for a clearer view of the coaxial tri-cubic morphology.The scale bar is 100 nm. Fig. 2 XRD and XPS characterizations and photophysical properties of the red Ag/AgCl photocatalysts.(A) XRD patterns of the red Ag/AgCl sample in comparison with AgCl (JCPDS file: 31-1238), the survey XPS spectrum (B), Ag 3d (C) and Cl 2p (D) of the red Ag/AgCl sample, (E) UV-visible diffuse reflectance spectra of the red Ag/AgCl NPs, normal AgCl and commercial TiO 2 (P25), and (F) the corresponding bandgap estimation based on the Kubelka-Munk theory. Fig. 3 Evaluation of the photocatalytic performances.Reaction dynamic curves of MO (A) and Cr VI (B) over the red Ag/AgCl photocatalysts, normal Ag/AgCl material and TiO 2 , (C) comparison and recycling experiments of the product yields and the corresponding AQE for the red Ag/AgCl photocatalysts. Fig. 4 A schematic illustration of the physical photocatalytic mechanism of the Ag/AgCl system.Band structures (left panel) and density of states (right panel) of the red Ag/AgCl photocatalyst. This journal is The Royal Society of Chemistry 2014 The authors are most grateful to the NSFC, China (no.21225524, 21175130, 21105096 and 21205112) and the Department of Science and Techniques of Jilin Province (no.20120308 and 201215091) for their nancial support.",
+            "annotations": [
+                {
+                    "category": "catalyst",
+                    "answer": "Ag/AgCl",
+                    "source": "In summary, a novel kind of red Ag/AgCl photocatalyst with a uniform coaxial tri-cubic morphology is prepared via a facile and versatile approach.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "light source",
+                    "answer": "Solar",
+                    "source": "This work provides a novel perspective for understanding the physical photocatalytic mechanism of the red Ag/AgCl system and should stimulate the development of silver halide-based photocatalysts for the exploitation and utilization of solar energy.",
+                    "annotator": "hybrid annotation"
+                },
+                {
+                    "category": "lamp",
+                    "answer": "UV-visible",
+                    "source": "Fig. 2 XRD and XPS characterizations and photophysical properties of the red Ag/AgCl photocatalysts.(A) XRD patterns of the red Ag/AgCl sample in comparison with AgCl (JCPDS file: 31-1238), the survey XPS spectrum (B), Ag 3d (C) and Cl 2p (D) of the red Ag/AgCl sample, (E) UV-visible diffuse reflectance spectra of the red Ag/AgCl NPs, normal AgCl and commercial TiO 2 (P25), and (F) the corresponding bandgap estimation based on the Kubelka-Munk theory.",
+                    "annotator": "hybrid annotation"
+                }
+            ]
+        }
+    ]
+}
