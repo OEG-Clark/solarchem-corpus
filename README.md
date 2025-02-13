@@ -70,7 +70,7 @@ The dataset consist of:
 
 ### Annotation Process
 
-![How we Annotated~](img/solar_eval_pipeline.png "How we Annotated~")
+![How we Annotated~](/SolarAnno/img/solar_eval_pipeline.png "How we Annotated~")
 
 1. Use the LLM to apply auto annotation
 2. Pass the answer to the human evaluator
