@@ -66,13 +66,23 @@ The dataset consist of:
 ```
 
 
-## Annotation Script
+## Annotation
+
+### Annotation Process
+
+![How we Annotated~](img/solar_eval_pipeline.png "How we Annotated~")
+
+1. Use the LLM to apply auto annotation
+2. Pass the answer to the human evaluator
+3. Human evaluate check the llm annotated answers as the final annotation
+
+
+### Annotation Script
 
 - The script is based on [Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/flash/) model, which is a state of the art generative model with outstanding reasoning capacity. 
 - The script is based on the [Solar-QA-Pipeline](https://github.com/oeg-upm/solar-qa/tree/main/CLI) extraction from solar chemistry academic papers, which is build upon [grobid](https://github.com/kermitt2/grobid)
 - The script is formatted as jupyter notebook, before get started, please make sure the `path` for files and folders are correct, and then start the annotation!
 
-### Script Requirements
 
 ```
 langchain
@@ -82,5 +92,23 @@ langchain-core
 pydantic
 ```
 
-### 
+Poetry Support: 
+1. Install [Poetry](https://python-poetry.org/)
+2. `cd code`
+3. `poetry install`
 
+### Script Arguement
+`python annotator.py --user_key XXX --model_id gemini-2.0-flash --file_dir ../paper_1025.json --save_file_dir test.json`
+
+Run with Poetry:
+
+`poetry run python annotator.py --user_key XXX --model_id gemini-2.0-flash --file_dir ../paper_1025.json --save_file_dir test.json`
+
+Here is a table that describe the parameters to run the SolarAnnotator
+
+| Parameter | Definition | DataType | Reference/Example |
+| -------- | ------- | ------- | ------- |
+| user_key  | the key of Gemini AI platform | String | [Gemini](https://gemini.google.com/) |
+| model_id | the reference of gemini model | String | [model_id](https://ai.google.dev/gemini-api/docs/models/gemini) |
+| file_dir | path for input data as a json format | String | ../paper_1025.json |
+| save_file_dir | path for where to save the result | String | ..test.json |
