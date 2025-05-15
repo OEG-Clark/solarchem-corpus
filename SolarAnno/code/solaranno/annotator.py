@@ -105,7 +105,7 @@ class SolarAnno():
                 
 def get_parser():
     parser = argparse.ArgumentParser(description="Solar Annotation Pipeline")
-    parser.add_argument('--user_key', default="AIzaSyD17BOuVn_T6_grylA4ZUnsmYLJc3lUldE", help="Gemini Key", type=str)
+    parser.add_argument('--user_key', default="xxx", help="Gemini Key", type=str)
     parser.add_argument('--model_id', default = "gemini-2.0-flash", help="gemini ai model reference", type=str)
     parser.add_argument('--file_dir', help="the location of the file being annotated", type=str)
     parser.add_argument('--save_file_dir', default="None", help="gemini-2.0-flash", type=str)
