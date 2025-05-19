@@ -29,7 +29,7 @@ import math
 import time
 import os
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyD17BOuVn_T6_grylA4ZUnsmYLJc3lUldE"
+os.environ["GOOGLE_API_KEY"] = "xxx"
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash",
