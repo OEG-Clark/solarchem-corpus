@@ -98,7 +98,7 @@ Our benchmark results are available in the results/ directory, including:
 - Comparative analysis of retrieval strategies
 - Performance metrics for RAG methodologies
 - LLM performance rankings
-
+  
 ### Task 1:
 
 | Question Category | Chunking Method |      |     | Retrieval Method |           |           |
@@ -139,4 +139,4 @@ Our benchmark results are available in the results/ directory, including:
 
 Task 3:
 
-![leaderboard~](/img/llm_performance_solarchemqa "leaderboard~")
+![leaderboard~](/solarchem-corpus/img/llm_performance_solarchemqa "leaderboard~")
