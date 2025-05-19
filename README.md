@@ -138,4 +138,4 @@ Our benchmark results are available in the results/ directory, including:
 |                    | ratio   | 0.4268 | 0.3780 | 0.5122 | 0.5244 | 0.0366 | 0.5854 | 0.3415 | 0.4007 |
 
 Task 3:
-![leaderboard~](/solarchem-corpus/img/llm_performance_solarchemqa.png)
+![leaderboard~](/img/llm_performance_solarchemqa.png)
