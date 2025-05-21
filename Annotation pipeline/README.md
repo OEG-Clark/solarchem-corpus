@@ -35,7 +35,7 @@ The SolarChemQA annotation sources pipeline is a two-phase system designed to an
 
 ### Annotation Process
 
-![How we Annotated~](/SolarAnno/img/solar_eval_pipeline.png "How we Annotated~")
+![How we Annotated~](./img/solar_eval_pipeline.png)
 
 1. Use the LLM to apply auto annotation
 2. Pass the answer to the human evaluator
