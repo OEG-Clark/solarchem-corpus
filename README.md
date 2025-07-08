@@ -22,8 +22,11 @@ The SolarChem Annotation Pipeline is the evidence extraction component that proc
 
 ## SolarChem Generation Pipeline
 
-The SolarChem Generation Pipeline represents the complete end-to-end system that takes extracted paper data and generates comprehensive responses for all seven experimental parameters. This pipeline demonstrates the full capabilities of the SolarChemQA system in real-world applications.
+The SolarChem Generation Pipeline represents the complete end-to-end system that takes extracted paper data and generates all seven experimental parameters from the paper. The pipeline first enables the SolarChem Annotation Pipeline to generate all evidence (extract quota from the paper) with corresponding experimental parameters. And then the pipeline incorporates large language models to infer all seven experimental parameters based on the evidence and the generated possible answers.
 
+Word Flow:
+
+![wordflow~](/img/agent_anno.png)
 
 ## SolarChemQA Dataset
 
