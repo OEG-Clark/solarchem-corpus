@@ -2,59 +2,98 @@
 
 This repository contains the benchmark and dataset for [SolarQA](https://github.com/oeg-upm/solar-qa) application. The SolarChem QA-RAG Benchmark is designed specifically for factual question answering benchmark based on solar chemistry academic papers. We intent to build an open-source benchmark & dataset for testing the performance of QA system when it comes to narrow-domain and in-depth questions. 
 
+The SolarChem QA-RAG Benchmark addresses the critical need for domain-specific evaluation tools in scientific literature processing. It aims to:
+
+- Build an open-source benchmark for testing QA system performance on narrow-domain, in-depth questions
+- Provide rigorous assessment capabilities for LLM-driven QA systems processing scientific content
+- Enable comprehensive evaluation of retrieval-augmented generation (RAG) strategies in solar chemistry
+
+## SolarChemQA Annotation Pipeline
+
+The SolarChem Annotation Pipeline is the evidence extraction component that processes solar chemistry research papers to identify and extract relevant experimental information. This pipeline serves as the foundation for creating high-quality training and evaluation data. This pipeline connects with the broader SolarQA ecosystem, providing the annotated evidence base necessary for effective question-answering system development and evaluation. The annotation pipeline extracts evidence for seven critical experimental parameters:
+
+- Catalyst: A substance that increases the rate of a reaction without modifying the overall standard Gibbs energy change in the reaction
+- Co-Catalyst: A substance or agent that brings about catalysis in conjunction with one or more others
+- Light Source: A light source is an optical subsystem that provides light for use in a distant area using a delivery system (e.g., fiber optics).
+- Lamp: A devide that generates heat, light, or any other form of radiation
+- Reactor Type: The condition of the reactor devide that performs the process of a photocatalysis reaction
+- Reaction Medium: The medium used for the reaction of the experiment execution
+- Operation Mode: The condition whether the operation is perfomed in batch-mode or continuous-mode
+
+## SolarChem Generation Pipeline
+
+The SolarChem Generation Pipeline represents the complete end-to-end system that takes extracted paper data and generates comprehensive responses for all seven experimental parameters. This pipeline demonstrates the full capabilities of the SolarChemQA system in real-world applications.
+
+
 ## SolarChemQA Dataset
 
-SolarChemQA provides a novel question answering dataset curated from solar chemistry literature, designed to rigorously assess the capabilities of LLM-driven QA systems in processing domain-specific scientific content. The dataset includes 574 domain expert annotations across 82 solar chemistry research papers, structured around seven critical experimental parameters. Together with 289 annotated source sentences with positive and negative examples across 21 papers.
+SolarChemQA provides a novel question answering dataset curated from solar chemistry literature, designed to rigorously assess the capabilities of LLM-driven QA systems in processing domain-specific scientific content. 
 
-### Sub-Datasets
+### SolarChemQA-Dataset-json
+
+SolarChemQA provides a novel question answering dataset curated from solar chemistry literature, designed to rigorously assess the capabilities of LLM-driven QA systems in processing domain-specific scientific content. The dataset includes 574 domain expert annotations across 82 solar chemistry research papers, structured around seven critical experimental parameters. Together with 289 annotated source sentences with positive and negative examples across 21 papers.
 
 - Query Sub-Dataset: Standardized queries for the seven experimental parameter categories
 - Paper Extraction Sub-Dataset: Structured content extracted from research papers
 - Annotation Sub-Dataset: 574 expert-validated annotations and 289 supporting textual sentences
 
-## SolarChemQA Evaluation
+### SolarChemQA-Dataset-Updated
+
+The SolarChemQA-Dataset-Updated directory contains the dataset under further developing, with the aim to expand the scope of the dataset.
+
+Dataset Structure:
+```project
+SolarChemQA-Dataset-Updated/
+├── extracted_paper/                    # Raw extracted paper contents (623 papers)
+├── domain_expert_annotated_sources/    # Expert-validated annotations
+└── [Additional structured data directories]
+```
+
+## SolarChemQA Evaluation: The Benchmark
 
 This repository also provides comprehensive benchmark tasks and evaluation methodologies for the SolarChemQA dataset. The benchmark is designed to evaluate LLM-driven QA systems across three critical dimensions in solar chemistry literature.
 
 ### Task 1: Information Retrieval Evaluation
 Assesses the effectiveness of different retrieval strategies in accessing relevant information from solar chemistry papers.
 
-```json
 Evaluation Target:
 - Chunking methodologies: Naive, Recursive, and Semantic Segmentation
 - Retrieval strategies: Naive, Hybrid, and Reranking approaches
 - Performance at identifying relevant experimental contexts
-```
-```json
-Metric: Normalized Discounted Cumulative Gain (NDCG)
-```
 
-Run Evaluation: 
+Evaluation Metric: Normalized Discounted Cumulative Gain (NDCG)
+
 Arguments:
 - input_file_dir: Path of raw extracted paper contents folder
 - gt_file_dir: Path of the source annotation folder
 - res_file_dir: Path for saving the evaluated result folder
 - chunk_size: The maximum number of characters or tokens allowed in a single chunk
 -overlap: Overlap between chunks ensures that information at the boundaries is not lost or contextually isolated.
+
+Usage
 ```python
-python Eval_IR.py --input_file_dir ".../SolarChemQA-Dataset/extracted_paper" --gt_file_dir ".../SolarChemQA-Dataset/domain_expert_annotated_sources/" --res_file_dir ".../Task-1-information-retrieval/result/" --chunk_size "1028" --overlap "128"
+python Eval_IR.py --input_file_dir ".../SolarChemQA-Dataset-Updated/extracted_paper" \
+                  --gt_file_dir ".../SolarChemQA-Dataset-Updated/domain_expert_annotated_sources/" \
+                  --res_file_dir ".../SolarChem-Evaluation/results/" \
+                  --chunk_size "1028" \
+                  --overlap "128"
 ```
 
 ### Task 2: RAG Method Evaluation
 Measures the effectiveness of different Retrieval-Augmented Generation strategies for providing accurate answers.
 
-```json
+
 Evaluation Target:
 - Nine combinations of chunking-retrieval methods
 - Answer quality across all seven experimental parameter categories
 - Semantic fidelity and lexical precision of generated answers
-```
-```json
+
+
 Metrics:
 - Semantic similarity (cosine similarity between embeddings)
 - Lexical matching (partial_ratio algorithm)
-```
-Run Evaluation: 
+
+
 Arguments:
 - input_file_dir: Path of raw extracted paper contents folder
 - res_file_dir: Path for saving the evaluated result folder
@@ -63,24 +102,29 @@ Arguments:
 - chunk_size: The maximum number of characters or tokens allowed in a single chunk
 -overlap: Overlap between chunks ensures that information at the boundaries is not lost or contextually isolated.
 ```python
-python Eval_RAG.py --input_file_dir ".../SolarChemQA-Dataset/extracted_paper" --res_file_dir ".../Task-1-information-retrieval/result/" --chunk_type "Naive" --rank_type "Naive" --chunk_size "1028" --overlap "128"
+python Eval_RAG.py --input_file_dir ".../SolarChemQA-Dataset-Updated/extracted_paper" \
+                   --res_file_dir ".../SolarChem-Evaluation/results/" \
+                   --chunk_type "Semantic" \
+                   --rank_type "Hybrid" \
+                   --chunk_size "1028" \
+                   --overlap "128"
 ```
 
 ### Task 3: LLM Performance Evaluation
 Compares the capabilities of various LLMs in understanding and answering questions about solar chemistry experiments.
 
-```json
+
 Evaluation Target:
 - Performance of API-based models: gemini-2.0-flash, gemini-2.5-flash, deepseek-v3, deepseek-r1, qwen3-plus, qwen2.5-max
 - Performance of locally-run models: deepseek-r1-32b, qwen-30b, gemma3-27b
 - Ability to capture experimental settings from scientific literature
-```
-```json
+
+
 Metrics:
 - Semantic similarity (cosine similarity between embeddings)
 - Lexical matching (partial_ratio algorithm)
-```
-Run Evaluation: 
+
+
 Arguments:
 - input_file_dir: Path of raw extracted paper contents folder
 - res_file_dir: Path for saving the evaluated result folder
@@ -88,11 +132,16 @@ Arguments:
 - rank_type: Naive, Rerank, Hybrid.
 - chunk_size: The maximum number of characters or tokens allowed in a single chunk
 -overlap: Overlap between chunks ensures that information at the boundaries is not lost or contextually isolated.
-```python
-python Eval_LLM.py --input_file_dir ".../SolarChemQA-Dataset/extracted_paper" --res_file_dir ".../Task-1-information-retrieval/result/" --chunk_type "Naive" --rank_type "Naive" --chunk_size "1028" --overlap "128"
+```bash
+python Eval_RAG.py --input_file_dir ".../SolarChemQA-Dataset-Updated/extracted_paper" \
+                   --res_file_dir ".../SolarChem-Evaluation/results/" \
+                   --chunk_type "Semantic" \
+                   --rank_type "Hybrid" \
+                   --chunk_size "1028" \
+                   --overlap "128"
 ```
 
-## SolarChemQA Benchmark
+## Benchmark Results on SolarChemQA-Dataset-Json
 
 Our benchmark results are available in the results/ directory, including:
 - Comparative analysis of retrieval strategies
