@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Highly stable 3D\\/2D WO3\\/g-C3N4 Z-scheme heterojunction for stimulating photocatalytic CO2 reduction by H2O\\/H2 to CO and CH4 under visible light",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

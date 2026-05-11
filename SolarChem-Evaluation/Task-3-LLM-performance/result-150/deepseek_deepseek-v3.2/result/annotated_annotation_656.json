@@ -1,0 +1,9 @@
+{
+  "catalyst": "MoPCN",
+  "co-catalyst": "MoP",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

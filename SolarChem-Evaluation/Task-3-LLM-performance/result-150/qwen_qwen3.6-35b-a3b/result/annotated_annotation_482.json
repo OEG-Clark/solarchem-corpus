@@ -1,0 +1,9 @@
+{
+  "catalyst": "Rh",
+  "co-catalyst": "Rh and Pd",
+  "light source": "UV",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

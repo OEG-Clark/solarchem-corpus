@@ -1,0 +1,9 @@
+{
+  "catalyst": "In2S3-NiS/MoO3@MoS2",
+  "co-catalyst": "In2S3, NiS",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

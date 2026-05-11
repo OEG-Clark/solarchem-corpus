@@ -1,0 +1,9 @@
+{
+  "catalyst": "m-CeO2 g-C3N4",
+  "co-catalyst": "none",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

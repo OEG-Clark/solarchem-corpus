@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ag-TMO_x",
+  "co-catalyst": "Ag, NiO_x, CoO_x, FeO_x",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "not specific"
+}

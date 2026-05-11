@@ -1,0 +1,9 @@
+{
+  "catalyst": "CdSe-graphene-TiO2",
+  "co-catalyst": "not specific",
+  "light source": "UV-Vis",
+  "lamp": "Halogen",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

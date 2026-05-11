@@ -1,0 +1,9 @@
+{
+  "catalyst": "Au/TiO2",
+  "co-catalyst": "Au",
+  "light source": "Solar Simulator",
+  "lamp": "Solar Simulator",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

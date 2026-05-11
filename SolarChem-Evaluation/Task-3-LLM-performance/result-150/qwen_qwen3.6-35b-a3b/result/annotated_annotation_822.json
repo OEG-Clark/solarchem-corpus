@@ -1,0 +1,9 @@
+{
+  "catalyst": "CdSZIF-8",
+  "co-catalyst": "CoCl2",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

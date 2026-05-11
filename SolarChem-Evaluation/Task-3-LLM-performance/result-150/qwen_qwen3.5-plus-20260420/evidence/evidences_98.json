@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Photocatalytic conversion of CO2 to hydrocarbon fuels via plasmon-enhanced absorption and metallic interband transitions",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

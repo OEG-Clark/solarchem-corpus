@@ -1,0 +1,9 @@
+{
+  "catalyst": "PteTiO2",
+  "co-catalyst": "Pt",
+  "light source": "UV-Vis",
+  "lamp": "Fluorescent",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

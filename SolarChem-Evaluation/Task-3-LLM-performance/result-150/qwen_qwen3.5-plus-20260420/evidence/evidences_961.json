@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Highly efficient photocatalytic reduction of CO2 on amine-functionalized Ti-MCM-41 zeolite",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

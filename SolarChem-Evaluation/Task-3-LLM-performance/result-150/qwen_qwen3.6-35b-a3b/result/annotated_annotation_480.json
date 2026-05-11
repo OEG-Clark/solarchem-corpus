@@ -1,0 +1,9 @@
+{
+  "catalyst": "CuV-TiO2",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Fluorescent",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Continuous"
+}

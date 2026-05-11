@@ -1,0 +1,9 @@
+{
+  "catalyst": "LaPO4-Pt",
+  "co-catalyst": "Pt",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}
