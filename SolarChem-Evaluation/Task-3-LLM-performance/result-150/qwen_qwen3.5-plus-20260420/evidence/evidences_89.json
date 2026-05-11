@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Photocatalytic conversion of CH4 and CO2 to oxygenated compounds over Cu/CdS?TiO2/SiO2 catalyst",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

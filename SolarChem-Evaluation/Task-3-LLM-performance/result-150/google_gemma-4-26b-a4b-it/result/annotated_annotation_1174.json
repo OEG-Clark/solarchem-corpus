@@ -1,0 +1,9 @@
+{
+  "catalyst": "Co-CuTiCe3",
+  "co-catalyst": "CuO, CoO",
+  "light source": "Solar Simulator",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

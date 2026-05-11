@@ -1,0 +1,20 @@
+{
+  "DOI": "",
+  "paper_title": "Enhanced Photocatalytic CO2 Reduction with Photothermal Effect by Cooperative Effect of Oxygen Vacancy and Au Cocatalyst",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [
+      {
+        "llm generation": "mesoporous TiO 2 nanospheres containing oxygen vacancies (OVs) and metallic Au nanoparticles (NPs)",
+        "source": "In this regard, mesoporous TiO 2 nanospheres containing oxygen vacancies (OVs) and metallic Au nanoparticles (NPs) were successfully prepared and showed markedly enhanced CO 2 reduction activity and CH 4 selectivity by the simple combination of photocatalysis with the simultaneous photothermal effect under full-spectrum irradiation.",
+        "context": "CO 2 conversion into chemical fuels is a sustainable approach to the concurrent mitigation of the energy crisis and the greenhouse effect.It is still urgently desirable but quite challenging to explore a promising catalyst for CO 2 photoreduction due to the severity in the fast recombination of electron holes and the deficiency of active sites, which have a tremendous influence on the catalytic behavior.In this regard, mesoporous TiO 2 nanospheres containing oxygen vacancies (OVs) and metallic Au nanoparticles (NPs) were successfully prepared and showed markedly enhanced CO 2 reduction activity and CH 4 selectivity by the simple combination of photocatalysis with the simultaneous photothermal effect under full-spectrum irradiation.The dual introduction of OVs and a AuTiO 2 Schottky junction can not only serve as an electron sink to significantly improve the charge separationtransfer efficiency but also show effective photothermal conversion to raise the local temperature of the catalyst, thus resulting in an enhanced shuttle of electrons and desorption of products.This study not only offers new insights into the integrated tuning of charge recombination processes but also demonstrates that the photothermocatalysis has great potential in CO 2 reduction."
+      }
+    ],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

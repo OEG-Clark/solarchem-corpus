@@ -1,0 +1,9 @@
+{
+  "catalyst": "C-In2O3/g-C3N4-5",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

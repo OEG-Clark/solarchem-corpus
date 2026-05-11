@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ag/CaTiO3",
+  "co-catalyst": "Ag, NiOx, CoOx, FeOx",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

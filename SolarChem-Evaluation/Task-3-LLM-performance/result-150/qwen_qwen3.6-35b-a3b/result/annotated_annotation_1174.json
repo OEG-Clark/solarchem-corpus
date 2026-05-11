@@ -1,0 +1,9 @@
+{
+  "catalyst": "CoO-CuO-TiO2-CeO2",
+  "co-catalyst": "Cu, Co",
+  "light source": "Solar",
+  "lamp": "Halogen",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "not specific"
+}

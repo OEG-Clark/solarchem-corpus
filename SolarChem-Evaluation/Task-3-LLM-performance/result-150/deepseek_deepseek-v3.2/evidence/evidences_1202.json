@@ -1,0 +1,57 @@
+{
+  "DOI": "",
+  "paper_title": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [
+      {
+        "llm generation": "In2S3-NiS co-decorated MoO3@MoS2 composites",
+        "source": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity",
+        "context": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity"
+      },
+      {
+        "llm generation": "In2S3-NiS co-decorated MoO3-MoS2",
+        "source": "In 2 S 3 -NiS co-decorated MoO 3 -MoS 2 was obtained by nonthermal plasma.",
+        "context": "h i g h l i g h t s g r a p h i c a l a b s t r a c t In 2 S 3 -NiS co-decorated MoO 3 -MoS 2 was obtained by nonthermal plasma.INSMoO 3 MoS 2 exhibited the enhanced photoreduction capacity toward CO 2 .The obtained junction interface favored the transfer and separation of charge carriers.CO 2 was efficiently reduced into CH 4 and CO under solar-light irradiation."
+      },
+      {
+        "llm generation": "MoO3 MoS2, In2S3-NiS",
+        "source": "The addition of dual In 2 S 3 -NiS into MoO 3 MoS 2 efficiently restrained CO yield, while enhanced CH 4 yield in solar-light driven photocatalytic system.",
+        "context": "The addition of dual In 2 S 3 -NiS into MoO 3 MoS 2 efficiently restrained CO yield, while enhanced CH 4 yield in solar-light driven photocatalytic system.CH 4 yield increased and then decreased with an increase in the total In 2 S 3 -NiS content.However, an inverse result was obtained by CO yield under the same conditions.Among these composites, the optimal 3-INS MoO 3 MoS 2 with a nominal In 2 S 3 -NiS content of 5.0 wt presented the best yield of CH 4 (49.11mmol g A1 h A1 ) and CO (6.19 mmol g A1 h A1 ).However, the photocatalytic capacity of 3-INSMoO 3 MoS 2 was impaired by the long-term photocorrosion.The tight interface of INSMoO 3 MoS 2 as well as Srich and O vacancies was critical for enhancing the capacity of solar-light capture and the high mobility of charge carriers.The nonthermal plasma was thus a promising route to fabricate metal sulfides-based photocatalysts. The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. Supplementary data to this article can be found online at https:doi.org10.1016j.ijhydene.2021.08.161.r e f e r e n c e s"
+      }
+    ],
+    "co-catalyst": [
+      {
+        "llm generation": "NiS",
+        "source": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity",
+        "context": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity"
+      },
+      {
+        "llm generation": "NiS",
+        "source": "In 2 S 3 -NiS co-decorated MoO 3 -MoS 2 was obtained by nonthermal plasma.",
+        "context": "h i g h l i g h t s g r a p h i c a l a b s t r a c t In 2 S 3 -NiS co-decorated MoO 3 -MoS 2 was obtained by nonthermal plasma.INSMoO 3 MoS 2 exhibited the enhanced photoreduction capacity toward CO 2 .The obtained junction interface favored the transfer and separation of charge carriers.CO 2 was efficiently reduced into CH 4 and CO under solar-light irradiation."
+      }
+    ],
+    "light source": [
+      {
+        "llm generation": "Solar",
+        "source": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity",
+        "context": "In2S3-NiS co-decorated MoO3@MoS2 composites for enhancing the solar-light induced CO2 photoreduction activity"
+      },
+      {
+        "llm generation": "Solar",
+        "source": "CO 2 was efficiently reduced into CH 4 and CO under solar-light irradiation.",
+        "context": "h i g h l i g h t s g r a p h i c a l a b s t r a c t In 2 S 3 -NiS co-decorated MoO 3 -MoS 2 was obtained by nonthermal plasma.INSMoO 3 MoS 2 exhibited the enhanced photoreduction capacity toward CO 2 .The obtained junction interface favored the transfer and separation of charge carriers.CO 2 was efficiently reduced into CH 4 and CO under solar-light irradiation."
+      },
+      {
+        "llm generation": "Solar",
+        "source": "The addition of dual In 2 S 3 -NiS into MoO 3 MoS 2 efficiently restrained CO yield, while enhanced CH 4 yield in solar-light driven photocatalytic system.",
+        "context": "The addition of dual In 2 S 3 -NiS into MoO 3 MoS 2 efficiently restrained CO yield, while enhanced CH 4 yield in solar-light driven photocatalytic system.CH 4 yield increased and then decreased with an increase in the total In 2 S 3 -NiS content.However, an inverse result was obtained by CO yield under the same conditions.Among these composites, the optimal 3-INS MoO 3 MoS 2 with a nominal In 2 S 3 -NiS content of 5.0 wt presented the best yield of CH 4 (49.11mmol g A1 h A1 ) and CO (6.19 mmol g A1 h A1 ).However, the photocatalytic capacity of 3-INSMoO 3 MoS 2 was impaired by the long-term photocorrosion.The tight interface of INSMoO 3 MoS 2 as well as Srich and O vacancies was critical for enhancing the capacity of solar-light capture and the high mobility of charge carriers.The nonthermal plasma was thus a promising route to fabricate metal sulfides-based photocatalysts. The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper. Supplementary data to this article can be found online at https:doi.org10.1016j.ijhydene.2021.08.161.r e f e r e n c e s"
+      }
+    ],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "CoO-CuO-TiO2-CeO2",
+  "co-catalyst": "CuO, Co3O4",
+  "light source": "Solar",
+  "lamp": "Solar Simulator",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "not specific"
+}

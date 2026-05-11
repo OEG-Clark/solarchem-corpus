@@ -1,0 +1,9 @@
+{
+  "catalyst": "In2S3",
+  "co-catalyst": "Co(bpy)3^{2+}",
+  "light source": "UV-Vis",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "not specific"
+}

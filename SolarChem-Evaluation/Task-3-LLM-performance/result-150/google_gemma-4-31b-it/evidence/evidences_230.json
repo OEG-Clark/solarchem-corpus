@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Photocatalytic reduction of CO2 on MgOTiO2 nanotube films",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}

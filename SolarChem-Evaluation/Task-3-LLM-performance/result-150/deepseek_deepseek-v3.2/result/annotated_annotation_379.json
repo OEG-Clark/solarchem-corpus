@@ -1,0 +1,9 @@
+{
+  "catalyst": "g-C3N4 KNbO3",
+  "co-catalyst": "Pt",
+  "light source": "UV-Vis",
+  "lamp": "not specific",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

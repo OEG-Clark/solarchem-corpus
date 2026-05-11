@@ -1,0 +1,9 @@
+{
+  "catalyst": "Cu-TiO2",
+  "co-catalyst": "Cu",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid, Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch/Continuous"
+}

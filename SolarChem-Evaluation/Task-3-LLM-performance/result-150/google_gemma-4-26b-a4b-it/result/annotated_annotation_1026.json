@@ -1,0 +1,9 @@
+{
+  "catalyst": "WO3-embedded 2D pillared Bt with 2D g-C3N4",
+  "co-catalyst": "Bt",
+  "light source": "UV-Vis",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

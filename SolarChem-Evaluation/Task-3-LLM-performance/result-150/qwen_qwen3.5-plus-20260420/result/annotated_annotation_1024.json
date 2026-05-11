@@ -1,0 +1,9 @@
+{
+  "catalyst": "SrTiO3:Rh, BiVO4",
+  "co-catalyst": "Ag, Au",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Continuous"
+}

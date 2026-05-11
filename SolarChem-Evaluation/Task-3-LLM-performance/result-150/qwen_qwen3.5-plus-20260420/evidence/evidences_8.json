@@ -1,0 +1,14 @@
+{
+  "DOI": "",
+  "paper_title": "Photocatalytic reduction of CO2 in methanol to methyl formate over CuO?TiO2 composite catalysts",
+  "human validator": "hybrid annotator",
+  "annotation": {
+    "catalyst": [],
+    "co-catalyst": [],
+    "light source": [],
+    "lamp": [],
+    "reaction medium": [],
+    "reactor type": [],
+    "operation mode": []
+  }
+}
