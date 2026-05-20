@@ -1,0 +1,9 @@
+{
+  "catalyst": "Pt/TiO2",
+  "co-catalyst": "RuBpy, BrGly and BrAsp",
+  "light source": "Solar",
+  "lamp": "daylight lamp",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

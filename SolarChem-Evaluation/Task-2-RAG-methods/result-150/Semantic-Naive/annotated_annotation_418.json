@@ -1,0 +1,9 @@
+{
+  "catalyst": "ZnOCo3O4",
+  "co-catalyst": "Co3O4",
+  "light source": "UV-vis",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "not specific"
+}

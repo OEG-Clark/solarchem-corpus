@@ -1,0 +1,9 @@
+{
+  "catalyst": "NH2-MIL-68(In)",
+  "co-catalyst": "2,2-bipyridine",
+  "light source": "not specific",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

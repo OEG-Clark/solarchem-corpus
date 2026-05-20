@@ -1,0 +1,9 @@
+{
+  "catalyst": "BaZrO3",
+  "co-catalyst": "Au, Pt, Ag, Cu, Ru",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

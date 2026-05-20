@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ti",
+  "co-catalyst": "Au",
+  "light source": "Solar",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

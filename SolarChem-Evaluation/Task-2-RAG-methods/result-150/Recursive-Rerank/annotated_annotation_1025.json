@@ -1,0 +1,9 @@
+{
+  "catalyst": "In2S3/NH2-MIL-68(In)",
+  "co-catalyst": "bpy",
+  "light source": "visible-light irradiation",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "not specific",
+  "operation mode": "not specific"
+}

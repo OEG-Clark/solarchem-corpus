@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalyst",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "UV lamp",
+  "reaction medium": "Liquid",
+  "reactor type": "closed photochemical reactor",
+  "operation mode": "Batch"
+}

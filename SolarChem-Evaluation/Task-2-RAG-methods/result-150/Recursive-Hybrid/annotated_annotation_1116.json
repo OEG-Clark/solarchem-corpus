@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ag (PD)NiO x (IMP)CTO, NiO x (IMP)CTO, Ag(PD)CoO x (IMP)CTO, CoO x (IMP) CTO, Ag(PD)FeO x (IMP)CTO, FeO x (IMP)CTO, Ag(PD)CTO and bare CTO",
+  "co-catalyst": "FeO_x, CoO_x, NiO_x",
+  "light source": "not specific",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Continuous"
+}

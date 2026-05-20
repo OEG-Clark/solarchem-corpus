@@ -1,0 +1,9 @@
+{
+  "catalyst": "CO2",
+  "co-catalyst": "none",
+  "light source": "UV-Vis",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "closed glass reactor",
+  "operation mode": "Batch"
+}

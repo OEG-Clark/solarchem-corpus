@@ -1,0 +1,9 @@
+{
+  "catalyst": "INSMoO3MoS2",
+  "co-catalyst": "In2S3-NiS",
+  "light source": "Xe lamp",
+  "lamp": "Xe",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

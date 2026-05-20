@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalyst",
+  "co-catalyst": "not specific",
+  "light source": "not specific",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}
