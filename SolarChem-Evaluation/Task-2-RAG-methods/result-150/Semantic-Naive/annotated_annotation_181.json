@@ -1,0 +1,9 @@
+{
+  "catalyst": "In(OH)3",
+  "co-catalyst": "Pt",
+  "light source": "UV",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

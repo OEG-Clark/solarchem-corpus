@@ -1,0 +1,9 @@
+{
+  "catalyst": "SrTiO3:Rh/BiVO4",
+  "co-catalyst": "Au",
+  "light source": "Visible Light",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

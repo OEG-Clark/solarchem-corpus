@@ -1,0 +1,9 @@
+{
+  "catalyst": "MoO_{3-x} QDsH-Pal",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

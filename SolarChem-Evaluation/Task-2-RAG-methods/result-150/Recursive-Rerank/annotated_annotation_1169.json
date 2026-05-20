@@ -1,0 +1,9 @@
+{
+  "catalyst": "MgAl-LDHs, ZnAl-LDHs, CuAl-LDHs, NiAl-LDHs",
+  "co-catalyst": "not specific",
+  "light source": "Solar",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

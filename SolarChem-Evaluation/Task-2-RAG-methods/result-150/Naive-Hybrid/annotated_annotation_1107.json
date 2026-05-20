@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ni(ppy)SiO_2",
+  "co-catalyst": "Ni(ppy)",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Continuous"
+}

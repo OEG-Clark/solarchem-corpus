@@ -1,0 +1,9 @@
+{
+  "catalyst": "ZnS-B, ZnS-A, RuZnS-A, RuZnS-B",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

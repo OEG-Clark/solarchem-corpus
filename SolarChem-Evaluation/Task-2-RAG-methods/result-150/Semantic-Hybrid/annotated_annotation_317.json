@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalysts",
+  "co-catalyst": "rGO",
+  "light source": "daylight lamp",
+  "lamp": "Fluorescent",
+  "reaction medium": "Liquid",
+  "reactor type": "gas flow",
+  "operation mode": "Continuous"
+}

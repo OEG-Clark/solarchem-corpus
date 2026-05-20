@@ -1,0 +1,9 @@
+{
+  "catalyst": "CdS ZIF-8",
+  "co-catalyst": "Co(bpy)3 2",
+  "light source": "Xe lamp",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

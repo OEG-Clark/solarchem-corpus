@@ -1,0 +1,9 @@
+{
+  "catalyst": "CO2",
+  "co-catalyst": "CuO",
+  "light source": "Solar lamp",
+  "lamp": "not specific",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

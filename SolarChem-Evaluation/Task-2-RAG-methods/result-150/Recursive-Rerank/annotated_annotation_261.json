@@ -1,0 +1,9 @@
+{
+  "catalyst": "In2O3/g-C3N4",
+  "co-catalyst": "none",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "quartz reactor",
+  "operation mode": "Batch"
+}

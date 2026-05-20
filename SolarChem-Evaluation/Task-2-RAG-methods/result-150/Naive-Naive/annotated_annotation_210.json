@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ag(0)Ti(AB)",
+  "co-catalyst": "not specific",
+  "light source": "UV-vis",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

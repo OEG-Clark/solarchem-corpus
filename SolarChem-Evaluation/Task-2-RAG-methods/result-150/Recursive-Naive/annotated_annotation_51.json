@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2",
+  "co-catalyst": "Pt",
+  "light source": "Solar",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "not specific"
+}

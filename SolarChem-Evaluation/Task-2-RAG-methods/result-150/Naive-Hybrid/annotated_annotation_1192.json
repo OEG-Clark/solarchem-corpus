@@ -1,0 +1,9 @@
+{
+  "catalyst": "Co(OH)2",
+  "co-catalyst": "Ru(bpy)3Cl2",
+  "light source": "visible light",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Fixed-bed",
+  "operation mode": "not specific"
+}
