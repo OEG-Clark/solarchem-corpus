@@ -54,7 +54,7 @@ class Ragger:
         self.embeddings = OpenAIEmbeddings(
             model="qwen/qwen3-embedding-8b",
             base_url="https://openrouter.ai/api/v1",
-            api_key="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",
+            api_key="sk-or-v1-xxx",
             check_embedding_ctx_length=False,
         )
 
