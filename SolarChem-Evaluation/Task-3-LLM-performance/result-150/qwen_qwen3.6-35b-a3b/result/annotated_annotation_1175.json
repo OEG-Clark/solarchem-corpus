@@ -1,9 +1,0 @@
-{
-  "catalyst": "In2S3",
-  "co-catalyst": "MoS2",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

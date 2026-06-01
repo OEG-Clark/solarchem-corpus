@@ -1,9 +1,0 @@
-{
-  "catalyst": "Cu2O/Zn-Cr LDH",
-  "co-catalyst": "Cu2O",
-  "light source": "UV",
-  "lamp": "Mercury-Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

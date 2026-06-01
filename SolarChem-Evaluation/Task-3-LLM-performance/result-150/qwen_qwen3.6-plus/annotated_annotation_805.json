@@ -1,0 +1,9 @@
+{
+  "catalyst": "PteTiO2MWCNT",
+  "co-catalyst": "not specific",
+  "light source": "Solar",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

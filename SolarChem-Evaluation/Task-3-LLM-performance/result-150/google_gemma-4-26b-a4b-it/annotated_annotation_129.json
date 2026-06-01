@@ -1,0 +1,9 @@
+{
+  "catalyst": "Pt(0.8 wt)SrTiO3:Rh",
+  "co-catalyst": "Pt",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Membrane",
+  "operation mode": "not specific"
+}

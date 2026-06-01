@@ -1,9 +1,0 @@
-{
-  "catalyst": "C3N4-0.5CoOx",
-  "co-catalyst": "Co",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "not specific",
-  "operation mode": "Batch"
-}

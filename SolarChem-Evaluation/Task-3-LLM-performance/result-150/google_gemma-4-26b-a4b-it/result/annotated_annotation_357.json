@@ -1,9 +1,0 @@
-{
-  "catalyst": "TiO2 doped with RuO2",
-  "co-catalyst": "RuO2",
-  "light source": "Solar",
-  "lamp": "Mercury",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

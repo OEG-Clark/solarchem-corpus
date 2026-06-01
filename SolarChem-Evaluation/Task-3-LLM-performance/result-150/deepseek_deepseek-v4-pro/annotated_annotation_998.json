@@ -1,0 +1,9 @@
+{
+  "catalyst": "C3N4",
+  "co-catalyst": "Co",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "not specific"
+}

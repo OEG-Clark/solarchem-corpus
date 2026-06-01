@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "Tungsten",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Continuous"
+}

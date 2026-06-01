@@ -1,19 +1,17 @@
 import json
 import time
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from agno.agent import Agent
 from fuzzywuzzy import fuzz
 
-from schemas import Answer, Evidence, Evidences
+from rag import Ragger
+from schemas import Answer, Evidences
+
+NOT_SPECIFIC = "not specific"
 
 
-# -----------------------------------------------------------------------------
-# Agent factories
-# -----------------------------------------------------------------------------
 def _build_agent(model, prompt_block: Dict[str, Any], output_schema, retries: int) -> Agent:
-    """Common agno Agent constructor — pulls name / role / instructions from
-    the YAML prompt block."""
     return Agent(
         name=prompt_block.get("name", "Agent"),
         role=prompt_block.get("role"),
@@ -27,30 +25,28 @@ def _build_agent(model, prompt_block: Dict[str, Any], output_schema, retries: in
 
 
 def build_extractor_agent(model, prompts: Dict[str, Any], retries: int) -> Agent:
-    """Agent that reads a paper section and produces an `Evidences` object."""
     return _build_agent(model, prompts["extract"], Evidences, retries)
 
 
 def build_annotator_agent(model, prompts: Dict[str, Any], retries: int) -> Agent:
-    """Agent that turns one piece of evidence into one candidate `Answer`."""
     return _build_agent(model, prompts["annotate"], Answer, retries)
 
 
-def build_voter_agent(model, prompts: Dict[str, Any], retries: int) -> Agent:
-    """Agent that aggregates candidate answers into a final `Answer`."""
-    return _build_agent(model, prompts["major_vote"], Answer, retries)
+def build_ragger(cfg: Dict[str, Any]) -> Ragger:
+    """Construct a Ragger from the active config."""
+    rag_cfg = cfg.get("rag") or {}
+    runtime = cfg.get("runtime") or {}
+    return Ragger(
+        chunk_type=rag_cfg.get("chunking", "Naive"),
+        rank_type=rag_cfg.get("retrieval", "Naive"),
+        chunk_size=runtime.get("chunk_size", 1024),
+        overlap=runtime.get("overlap", 128),
+        top_k=runtime.get("top_k", 5),
+        paper_sections=runtime.get("paper_sections", []),
+    )
 
 
-# -----------------------------------------------------------------------------
-# Helpers
-# -----------------------------------------------------------------------------
 def _content_to_model(response, schema_cls):
-    """Coerce an agno RunResponse / RunOutput into a pydantic model.
-
-    Agno populates ``response.content`` with an instance of ``output_schema``
-    when the model honours the schema, but we fall back to JSON parsing for
-    providers that occasionally return a string.
-    """
     content = getattr(response, "content", response)
     if isinstance(content, schema_cls):
         return content
@@ -58,145 +54,121 @@ def _content_to_model(response, schema_cls):
         return schema_cls(**content)
     if isinstance(content, str):
         return schema_cls(**json.loads(content))
-    raise TypeError(
-        f"Unexpected response content type: {type(content).__name__}"
-    )
+    raise TypeError(f"Unexpected response content type: {type(content).__name__}")
 
 
 def _check_source(extracted_source: str, paragraph: str, threshold: int) -> bool:
-    """Verify that an `extracted_source` really appears inside `paragraph`."""
     if not extracted_source or not paragraph:
         return False
     return fuzz.partial_ratio(extracted_source, paragraph) >= threshold
 
 
-# -----------------------------------------------------------------------------
-# Stage 1 — extract evidences from a paper
-# -----------------------------------------------------------------------------
-def extract_evidences(
+def _extract_one_category(
+    extractor: Agent,
+    category: str,
+    context: str,
+    template: str,
+    runtime: Dict[str, Any],
+) -> Optional[str]:
+    prompt = template.format(context=context)
+    try:
+        response = extractor.run(prompt)
+        evidences_obj = _content_to_model(response, Evidences)
+    except Exception as err:
+        print(f"  [extract] {category} failed: {err}")
+        return None
+    finally:
+        time.sleep(runtime.get("inter_call_sleep", 0))
+
+    threshold = runtime["source_match_threshold"]
+    for ev in evidences_obj.evidences:
+        if ev.category != category:
+            continue
+        if _check_source(ev.source, context, threshold):
+            return ev.source
+    return None
+
+
+def _annotate(
+    annotator: Agent,
+    category: str,
+    cat_meta: Dict[str, str],
+    evidence_text: str,
+    template: str,
+    runtime: Dict[str, Any],
+) -> Optional[str]:
+    prompt = template.format(
+        category=category,
+        definition=cat_meta["definition"],
+        choices=cat_meta["choices"],
+        evidence=evidence_text,
+    )
+    try:
+        resp = annotator.run(prompt)
+        return _content_to_model(resp, Answer).answer
+    except Exception as err:
+        print(f"  [annotate] {category} failed: {err}")
+        return None
+    finally:
+        time.sleep(runtime.get("inter_call_sleep", 0))
+
+
+def generate_answers(
     file_data: List[Dict[str, Any]],
     extractor: Agent,
-    cfg: Dict[str, Any],
-) -> Dict[str, Any]:
-    """Walk through one paper's JSON and return the raw annotation skeleton."""
-    runtime = cfg["runtime"]
-    categories = list(cfg["categories"].keys())
-
-    res: Dict[str, Any] = {
-        "DOI": "",
-        "paper_title": "",
-        "human validator": runtime["human_validator_label"],
-        "annotation": {cat: [] for cat in categories},
-    }
-
-    # Pull DOI / title out of the paper file.
-    for item in file_data:
-        if item.get("title") == runtime["doi_field"]:
-            res["DOI"] = item.get("content", "")
-        elif item.get("title") == runtime["title_field"]:
-            res["paper_title"] = item.get("content", "")
-
-    user_template = cfg["prompts"]["extract"]["prompt_template"]
-    threshold = runtime["source_match_threshold"]
-
-    for item in file_data:
-        if item.get("title") not in runtime["paper_sections"]:
-            continue
-        section_text = item.get("content", "")
-        if not section_text:
-            continue
-
-        prompt = user_template.format(context=section_text)
-        try:
-            response = extractor.run(prompt)
-            evidences_obj = _content_to_model(response, Evidences)
-        except Exception as err:  # noqa: BLE001
-            print(f"  [extract] section '{item.get('title')}' failed: {err}")
-            time.sleep(runtime["inter_call_sleep"])
-            continue
-
-        for ev in evidences_obj.evidences:
-            if ev.category not in res["annotation"]:
-                # Skip categories the model invented that aren't in our schema.
-                continue
-            if not _check_source(ev.source, section_text, threshold):
-                continue
-            res["annotation"][ev.category].append({
-                "llm generation": ev.inferences,
-                "source": ev.source,
-                "context": section_text,
-            })
-        print(f"  [extract] section '{item.get('title')}' done "
-              f"(+{len(evidences_obj.evidences)} candidate evidences)")
-        time.sleep(runtime["inter_call_sleep"])
-
-    return res
-
-
-# -----------------------------------------------------------------------------
-# Stage 2 — majority-vote final answer per category
-# -----------------------------------------------------------------------------
-def major_vote_answers(
-    annotation: Dict[str, Any],
     annotator: Agent,
-    voter: Agent,
+    ragger: Ragger,
     cfg: Dict[str, Any],
+    paper_index: Optional[str] = None,
 ) -> Dict[str, str]:
-    """Produce one final answer per category from the harvested evidences."""
     runtime = cfg["runtime"]
-    categories = cfg["categories"]
+    categories_meta = cfg["categories"]
+    extract_template = cfg["prompts"]["extract"]["prompt_template"]
     annotate_template = cfg["prompts"]["annotate"]["prompt_template"]
-    vote_template = cfg["prompts"]["major_vote"]["prompt_template"]
+    queries = cfg.get("queries") or {}
 
-    final: Dict[str, str] = {}
+    ragger.build_for_paper(file_data, paper_index=paper_index)
 
-    for category, meta in categories.items():
-        evidences_list = annotation["annotation"].get(category, [])
-        if not evidences_list:
-            final[category] = "not specific"
-            print(f"  [vote] {category}: no evidence -> not specific")
+    answers: Dict[str, str] = {}
+
+    if not ragger.input_data.strip():
+        print("  [retrieve] no usable section text in this paper")
+        for category in categories_meta:
+            answers[category] = NOT_SPECIFIC
+        return answers
+
+    for category, cat_meta in categories_meta.items():
+        query = queries.get(category)
+        if not query:
+            print(f"  [retrieve] no query configured for '{category}', skipping")
+            answers[category] = NOT_SPECIFIC
             continue
 
-        # Per-evidence single-shot annotations.
-        candidates: List[str] = []
-        all_evidence_texts: List[str] = []
-        for ev in evidences_list:
-            evidence_text = ev["source"]
-            all_evidence_texts.append(evidence_text)
-            prompt = annotate_template.format(
-                category=category,
-                definition=meta["definition"],
-                choices=meta["choices"],
-                evidence=evidence_text,
-            )
-            try:
-                resp = annotator.run(prompt)
-                candidates.append(_content_to_model(resp, Answer).answer)
-            except Exception as err:  # noqa: BLE001
-                print(f"  [annotate] {category} failed on one evidence: {err}")
-            time.sleep(runtime["inter_call_sleep"])
-
-        if not candidates:
-            final[category] = "not specific"
-            print(f"  [vote] {category}: all annotations failed -> not specific")
-            continue
-
-        # Aggregate candidates into a final answer.
-        prompt = vote_template.format(
-            category=category,
-            choices=meta["choices"],
-            evidences="\n".join(all_evidence_texts),
-            inferences="\n".join(candidates),
-        )
         try:
-            resp = voter.run(prompt)
-            final[category] = _content_to_model(resp, Answer).answer
-        except Exception as err:  # noqa: BLE001
-            print(f"  [vote] {category} aggregation failed: {err}")
-            # Fall back to first candidate so we don't lose the work.
-            final[category] = candidates[0]
+            retrieved_texts = ragger.retrieve(query)
+        except Exception as err:
+            print(f"  [retrieve] {category} failed: {err}")
+            answers[category] = NOT_SPECIFIC
+            continue
 
-        print(f"  [vote] {category}: candidates={candidates} -> {final[category]!r}")
-        time.sleep(runtime["inter_call_sleep"])
+        if not retrieved_texts:
+            print(f"  [retrieve] {category}: no chunks retrieved")
+            answers[category] = NOT_SPECIFIC
+            continue
 
-    return final
+        context = "\n\n".join(retrieved_texts)
+        evidence_source = _extract_one_category(
+            extractor, category, context, extract_template, runtime
+        )
+        if evidence_source is None:
+            answers[category] = NOT_SPECIFIC
+            print(f"  [done] {category}: {NOT_SPECIFIC} (no verifiable evidence)")
+            continue
+
+        ans = _annotate(
+            annotator, category, cat_meta, evidence_source, annotate_template, runtime
+        )
+        answers[category] = ans if ans is not None else NOT_SPECIFIC
+        print(f"  [done] {category}: {answers[category]!r}")
+
+    return answers

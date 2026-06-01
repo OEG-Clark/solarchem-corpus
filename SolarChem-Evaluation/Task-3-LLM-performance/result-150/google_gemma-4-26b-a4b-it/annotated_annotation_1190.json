@@ -1,0 +1,9 @@
+{
+  "catalyst": "MOF-808-CuNi",
+  "co-catalyst": "Ru(bpy)3 Cl 2 6H 2 O",
+  "light source": "Xe lamp",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

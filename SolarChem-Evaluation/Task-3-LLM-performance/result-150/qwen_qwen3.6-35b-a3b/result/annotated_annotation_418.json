@@ -1,9 +1,0 @@
-{
-  "catalyst": "ZnOCo3O4",
-  "co-catalyst": "Co3O4",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Membrane",
-  "operation mode": "Batch"
-}

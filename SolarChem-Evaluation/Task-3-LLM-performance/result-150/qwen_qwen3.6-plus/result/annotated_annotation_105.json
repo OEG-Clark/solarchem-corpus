@@ -1,9 +1,0 @@
-{
-  "catalyst": "Pt/TiO2",
-  "co-catalyst": "Pt",
-  "light source": "Solar",
-  "lamp": "not specific",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

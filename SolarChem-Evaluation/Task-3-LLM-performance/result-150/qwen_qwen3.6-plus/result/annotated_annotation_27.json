@@ -1,9 +1,0 @@
-{
-  "catalyst": "Rh/TiO2",
-  "co-catalyst": "Rh",
-  "light source": "UV-Vis",
-  "lamp": "Mercury",
-  "reaction medium": "Gas",
-  "reactor type": "not specific",
-  "operation mode": "Batch"
-}

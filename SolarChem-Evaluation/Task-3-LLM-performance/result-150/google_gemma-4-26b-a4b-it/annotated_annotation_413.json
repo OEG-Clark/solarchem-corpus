@@ -1,0 +1,9 @@
+{
+  "catalyst": "CdS/g-C3N4",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "methanol solution",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

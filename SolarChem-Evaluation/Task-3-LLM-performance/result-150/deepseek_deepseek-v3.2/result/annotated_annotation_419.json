@@ -1,9 +1,0 @@
-{
-  "catalyst": "BiOI/g-C₃N₄",
-  "co-catalyst": "not specific",
-  "light source": "UV-Vis",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

@@ -1,9 +1,0 @@
-{
-  "catalyst": "WO3/g-C3N4",
-  "co-catalyst": "not specific",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Continuous"
-}

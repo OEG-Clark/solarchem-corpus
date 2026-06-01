@@ -1,9 +1,0 @@
-{
-  "catalyst": "Ag:Cu-Ga2O3",
-  "co-catalyst": "Ag, Cu",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

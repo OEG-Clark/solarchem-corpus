@@ -1,9 +1,0 @@
-{
-  "catalyst": "Pt",
-  "co-catalyst": "Pt",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

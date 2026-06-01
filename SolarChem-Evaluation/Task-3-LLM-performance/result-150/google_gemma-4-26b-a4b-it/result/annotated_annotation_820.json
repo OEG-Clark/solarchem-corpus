@@ -1,9 +1,0 @@
-{
-  "catalyst": "TiO2-GO",
-  "co-catalyst": "GO",
-  "light source": "UV",
-  "lamp": "Fluorescent",
-  "reaction medium": "Liquid",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

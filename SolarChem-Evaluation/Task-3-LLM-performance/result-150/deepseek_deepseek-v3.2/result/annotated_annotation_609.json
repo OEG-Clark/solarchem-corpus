@@ -1,9 +1,0 @@
-{
-  "catalyst": "Ag-TiO2",
-  "co-catalyst": "not specific",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

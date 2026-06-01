@@ -1,0 +1,9 @@
+{
+  "catalyst": "not specific",
+  "co-catalyst": "Ru",
+  "light source": "Solar Simulator",
+  "lamp": "LED",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}
