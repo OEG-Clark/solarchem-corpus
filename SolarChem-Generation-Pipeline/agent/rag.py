@@ -16,7 +16,7 @@ from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 
 
-DEFAULT_EMBEDDING_MODEL = "avr/sfr-embedding-mistral:latest"
+# DEFAULT_EMBEDDING_MODEL = "avr/sfr-embedding-mistral:latest"
 DEFAULT_RERANK_MODEL = "rank-T5-flan"
 DEFAULT_HYBRID_WEIGHTS = (0.5, 0.5)
 
