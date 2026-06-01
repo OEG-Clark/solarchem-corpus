@@ -3,8 +3,6 @@ from pydantic import BaseModel, Field
 
 
 class Evidence(BaseModel):
-    """A single piece of evidence harvested from one section of a paper."""
-
     category: str = Field(description="Category this evidence belongs to")
     inferences: str = Field(
         description="The actual selection or inference of the answer"
@@ -16,8 +14,6 @@ class Evidence(BaseModel):
 
 
 class Evidences(BaseModel):
-    """Wraps the agent's reasoning + a list of evidences."""
-
     analysis: str = Field(description="Brief description of the reasoning")
     evidences: List[Evidence] = Field(
         default_factory=list,
@@ -26,6 +22,4 @@ class Evidences(BaseModel):
 
 
 class Answer(BaseModel):
-    """The single-value answer for one experimental setting."""
-
     answer: str = Field(description="The actual value of the experiment setting")

@@ -1,9 +1,0 @@
-{
-  "catalyst": "(PtTiO2)rGO",
-  "co-catalyst": "Pt",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Gas",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

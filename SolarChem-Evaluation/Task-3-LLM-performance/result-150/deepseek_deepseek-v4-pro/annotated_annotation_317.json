@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalysts",
+  "co-catalyst": "not specific",
+  "light source": "Visible",
+  "lamp": "Fluorescent",
+  "reaction medium": "not specific",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

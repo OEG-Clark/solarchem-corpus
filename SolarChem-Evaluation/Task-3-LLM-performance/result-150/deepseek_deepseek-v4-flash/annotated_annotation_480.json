@@ -1,0 +1,9 @@
+{
+  "catalyst": "CuV-TiO2",
+  "co-catalyst": "Cu, V",
+  "light source": "Visible",
+  "lamp": "Tungsten",
+  "reaction medium": "not specific",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

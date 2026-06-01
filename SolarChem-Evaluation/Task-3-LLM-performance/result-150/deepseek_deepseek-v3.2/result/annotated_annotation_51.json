@@ -1,9 +1,0 @@
-{
-  "catalyst": "PtK2Ti6O13 + Fe-Cu-KDAY",
-  "co-catalyst": "Fe-Cu-KDAY",
-  "light source": "Solar",
-  "lamp": "Mercury-Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "not specific",
-  "operation mode": "Batch"
-}

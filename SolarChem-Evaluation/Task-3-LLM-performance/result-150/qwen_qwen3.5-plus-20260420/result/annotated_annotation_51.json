@@ -1,9 +1,0 @@
-{
-  "catalyst": "PtK2Ti6O13",
-  "co-catalyst": "Pt",
-  "light source": "Solar",
-  "lamp": "Mercury-Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

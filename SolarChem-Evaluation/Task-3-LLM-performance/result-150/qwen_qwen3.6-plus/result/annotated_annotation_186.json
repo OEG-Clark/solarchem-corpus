@@ -1,9 +1,0 @@
-{
-  "catalyst": "ZnS",
-  "co-catalyst": "NiS",
-  "light source": "UV",
-  "lamp": "Mercury",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

@@ -1,0 +1,42 @@
+paths:
+  output_folder: "/home/jovyan/solarchem-corpus-main/SolarChem-Evaluation/Task-3-LLM-performance/result-150"
+
+
+rag:
+  chunking:  "Naive"
+  retrieval: "Naive"
+
+
+runs:
+
+  - provider: "openrouter"
+    openrouter:
+      id: "qwen/qwen3.6-plus"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "qwen/qwen3.6-flash"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "qwen/qwen3.6-27b"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "qwen/qwen3.6-35b-a3b"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "google/gemma-4-26b-a4b-it"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "google/gemma-4-31b-it"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "deepseek/deepseek-v4-flash"
+
+  - provider: "openrouter"
+    openrouter:
+      id: "deepseek/deepseek-v4-pro"

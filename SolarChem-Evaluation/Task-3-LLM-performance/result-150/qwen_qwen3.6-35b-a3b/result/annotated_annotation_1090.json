@@ -1,9 +1,0 @@
-{
-  "catalyst": "Au",
-  "co-catalyst": "Au",
-  "light source": "Solar",
-  "lamp": "Solar Simulator",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

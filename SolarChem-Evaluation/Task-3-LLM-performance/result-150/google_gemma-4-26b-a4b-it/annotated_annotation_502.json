@@ -1,0 +1,9 @@
+{
+  "catalyst": "SrTiO3",
+  "co-catalyst": "PdCl2, H2PtCl6, AgNO3, HAuCl4, CdSO4, Al2(SO4)3, Ga2(SO4)3, In2(SO4)3, SnSO4",
+  "light source": "Monochromatic",
+  "lamp": "Mercury-Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

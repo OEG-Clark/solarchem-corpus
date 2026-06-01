@@ -1,9 +1,0 @@
-{
-  "catalyst": "Cu-TiO2",
-  "co-catalyst": "Cu",
-  "light source": "UV",
-  "lamp": "Halogen",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch/Continuous"
-}

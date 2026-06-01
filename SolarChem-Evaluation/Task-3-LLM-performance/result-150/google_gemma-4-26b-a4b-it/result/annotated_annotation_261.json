@@ -1,9 +1,0 @@
-{
-  "catalyst": "In2O3-C3N4",
-  "co-catalyst": "Pt",
-  "light source": "UV-Vis",
-  "lamp": "not specific",
-  "reaction medium": "Liquid",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

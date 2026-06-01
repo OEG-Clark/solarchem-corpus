@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2CZnCo-ZIF-L",
+  "co-catalyst": "not specific",
+  "light source": "not specific",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

@@ -1,9 +1,0 @@
-{
-  "catalyst": "Au3Pd1/3DOM-TiO2",
-  "co-catalyst": "AuPd",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "not specific",
-  "operation mode": "Batch"
-}

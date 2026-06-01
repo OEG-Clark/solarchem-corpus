@@ -1,9 +1,0 @@
-{
-  "catalyst": "NH2-UiO-66",
-  "co-catalyst": "CDs",
-  "light source": "UV-Vis",
-  "lamp": "Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "Optical Fiber",
-  "operation mode": "Batch"
-}

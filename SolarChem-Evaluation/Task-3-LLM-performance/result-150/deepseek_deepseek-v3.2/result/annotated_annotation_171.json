@@ -1,9 +1,0 @@
-{
-  "catalyst": "Ag/TiO2",
-  "co-catalyst": "Ag",
-  "light source": "UV",
-  "lamp": "Mercury",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Continuous"
-}

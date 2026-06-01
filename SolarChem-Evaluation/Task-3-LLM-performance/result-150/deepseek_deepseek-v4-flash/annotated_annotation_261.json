@@ -1,0 +1,9 @@
+{
+  "catalyst": "In2O3-g-C3N4",
+  "co-catalyst": "Pt",
+  "light source": "UV-Vis",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Unknown",
+  "operation mode": "Batch"
+}

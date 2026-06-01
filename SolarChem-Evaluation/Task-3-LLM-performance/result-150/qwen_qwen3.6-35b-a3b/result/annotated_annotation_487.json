@@ -1,9 +1,0 @@
-{
-  "catalyst": "Cu/TiO2",
-  "co-catalyst": "Cu",
-  "light source": "UV",
-  "lamp": "LED",
-  "reaction medium": "Gas",
-  "reactor type": "Optical Fiber",
-  "operation mode": "Continuous"
-}

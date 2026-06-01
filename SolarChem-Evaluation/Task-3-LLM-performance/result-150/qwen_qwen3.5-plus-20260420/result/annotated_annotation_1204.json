@@ -1,9 +1,0 @@
-{
-  "catalyst": "mpg-C3N4",
-  "co-catalyst": "terpyridine",
-  "light source": "Monochromatic",
-  "lamp": "LED",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

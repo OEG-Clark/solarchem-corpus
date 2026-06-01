@@ -1,9 +1,0 @@
-{
-  "catalyst": "TiO2@PEI-Grafted-MWCNTs",
-  "co-catalyst": "PEI-grafted CNTs",
-  "light source": "UV",
-  "lamp": "Xe-Halogen",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

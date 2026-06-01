@@ -1,0 +1,218 @@
+{
+  "Naive-Hybrid": {
+    "cos_sim": {
+      "Catalyst": 0.7508,
+      "Co-Catalyst": 0.6922,
+      "Light Source": 0.7221,
+      "Lamp": 0.9131,
+      "Reactor Type": 0.7675,
+      "Reaction Medium": 0.8805,
+      "Operation Mode": 0.8053
+    },
+    "ratio": {
+      "Catalyst": 0.6557,
+      "Co-Catalyst": 0.4335,
+      "Light Source": 0.5608,
+      "Lamp": 0.841,
+      "Reactor Type": 0.5005,
+      "Reaction Medium": 0.7093,
+      "Operation Mode": 0.6186
+    },
+    "average": {
+      "cos_sim": 0.7902,
+      "ratio": 0.617
+    }
+  },
+  "Naive-Naive": {
+    "cos_sim": {
+      "Catalyst": 0.7531,
+      "Co-Catalyst": 0.7029,
+      "Light Source": 0.7273,
+      "Lamp": 0.922,
+      "Reactor Type": 0.7782,
+      "Reaction Medium": 0.8952,
+      "Operation Mode": 0.8064
+    },
+    "ratio": {
+      "Catalyst": 0.6486,
+      "Co-Catalyst": 0.4577,
+      "Light Source": 0.5571,
+      "Lamp": 0.8693,
+      "Reactor Type": 0.5219,
+      "Reaction Medium": 0.7123,
+      "Operation Mode": 0.6302
+    },
+    "average": {
+      "cos_sim": 0.7979,
+      "ratio": 0.6282
+    }
+  },
+  "Naive-Rerank": {
+    "cos_sim": {
+      "Catalyst": 0.7619,
+      "Co-Catalyst": 0.6917,
+      "Light Source": 0.7133,
+      "Lamp": 0.8438,
+      "Reactor Type": 0.6499,
+      "Reaction Medium": 0.8376,
+      "Operation Mode": 0.7173
+    },
+    "ratio": {
+      "Catalyst": 0.6837,
+      "Co-Catalyst": 0.4434,
+      "Light Source": 0.5265,
+      "Lamp": 0.7742,
+      "Reactor Type": 0.259,
+      "Reaction Medium": 0.6542,
+      "Operation Mode": 0.4817
+    },
+    "average": {
+      "cos_sim": 0.7451,
+      "ratio": 0.5461
+    }
+  },
+  "Recursive-Hybrid": {
+    "cos_sim": {
+      "Catalyst": 0.7507,
+      "Co-Catalyst": 0.7001,
+      "Light Source": 0.722,
+      "Lamp": 0.9067,
+      "Reactor Type": 0.7496,
+      "Reaction Medium": 0.8864,
+      "Operation Mode": 0.7937
+    },
+    "ratio": {
+      "Catalyst": 0.6676,
+      "Co-Catalyst": 0.4659,
+      "Light Source": 0.5388,
+      "Lamp": 0.841,
+      "Reactor Type": 0.4747,
+      "Reaction Medium": 0.7037,
+      "Operation Mode": 0.608
+    },
+    "average": {
+      "cos_sim": 0.787,
+      "ratio": 0.6142
+    }
+  },
+  "Recursive-Naive": {
+    "cos_sim": {
+      "Catalyst": 0.7642,
+      "Co-Catalyst": 0.7039,
+      "Light Source": 0.7415,
+      "Lamp": 0.9171,
+      "Reactor Type": 0.7404,
+      "Reaction Medium": 0.9062,
+      "Operation Mode": 0.8137
+    },
+    "ratio": {
+      "Catalyst": 0.6846,
+      "Co-Catalyst": 0.4605,
+      "Light Source": 0.5833,
+      "Lamp": 0.8632,
+      "Reactor Type": 0.4553,
+      "Reaction Medium": 0.7291,
+      "Operation Mode": 0.6484
+    },
+    "average": {
+      "cos_sim": 0.7981,
+      "ratio": 0.6321
+    }
+  },
+  "Recursive-Rerank": {
+    "cos_sim": {
+      "Catalyst": 0.7581,
+      "Co-Catalyst": 0.6978,
+      "Light Source": 0.7279,
+      "Lamp": 0.8263,
+      "Reactor Type": 0.6438,
+      "Reaction Medium": 0.8329,
+      "Operation Mode": 0.7263
+    },
+    "ratio": {
+      "Catalyst": 0.6507,
+      "Co-Catalyst": 0.4633,
+      "Light Source": 0.5819,
+      "Lamp": 0.728,
+      "Reactor Type": 0.2543,
+      "Reaction Medium": 0.6371,
+      "Operation Mode": 0.496
+    },
+    "average": {
+      "cos_sim": 0.7447,
+      "ratio": 0.5445
+    }
+  },
+  "Semantic-Hybrid": {
+    "cos_sim": {
+      "Catalyst": 0.758,
+      "Co-Catalyst": 0.6884,
+      "Light Source": 0.7332,
+      "Lamp": 0.9049,
+      "Reactor Type": 0.7618,
+      "Reaction Medium": 0.8833,
+      "Operation Mode": 0.7984
+    },
+    "ratio": {
+      "Catalyst": 0.6533,
+      "Co-Catalyst": 0.4366,
+      "Light Source": 0.5951,
+      "Lamp": 0.8451,
+      "Reactor Type": 0.4827,
+      "Reaction Medium": 0.6958,
+      "Operation Mode": 0.6165
+    },
+    "average": {
+      "cos_sim": 0.7897,
+      "ratio": 0.6179
+    }
+  },
+  "Semantic-Naive": {
+    "cos_sim": {
+      "Catalyst": 0.7433,
+      "Co-Catalyst": 0.675,
+      "Light Source": 0.7422,
+      "Lamp": 0.9025,
+      "Reactor Type": 0.7741,
+      "Reaction Medium": 0.8942,
+      "Operation Mode": 0.8223
+    },
+    "ratio": {
+      "Catalyst": 0.6393,
+      "Co-Catalyst": 0.4153,
+      "Light Source": 0.5999,
+      "Lamp": 0.8371,
+      "Reactor Type": 0.5122,
+      "Reaction Medium": 0.7351,
+      "Operation Mode": 0.6607
+    },
+    "average": {
+      "cos_sim": 0.7934,
+      "ratio": 0.6285
+    }
+  },
+  "Semantic-Rerank": {
+    "cos_sim": {
+      "Catalyst": 0.7362,
+      "Co-Catalyst": 0.6951,
+      "Light Source": 0.7252,
+      "Lamp": 0.8373,
+      "Reactor Type": 0.6963,
+      "Reaction Medium": 0.8246,
+      "Operation Mode": 0.7417
+    },
+    "ratio": {
+      "Catalyst": 0.6183,
+      "Co-Catalyst": 0.4505,
+      "Light Source": 0.5746,
+      "Lamp": 0.744,
+      "Reactor Type": 0.3641,
+      "Reaction Medium": 0.6155,
+      "Operation Mode": 0.522
+    },
+    "average": {
+      "cos_sim": 0.7509,
+      "ratio": 0.5556
+    }
+  }
+}

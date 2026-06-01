@@ -1,9 +1,0 @@
-{
-  "catalyst": "In2S3/NH2-MIL-68(In)/In2S3",
-  "co-catalyst": "Co(bpy)3",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}

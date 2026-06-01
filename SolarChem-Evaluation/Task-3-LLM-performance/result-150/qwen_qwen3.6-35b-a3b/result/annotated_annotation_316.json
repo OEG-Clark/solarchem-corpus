@@ -1,9 +1,0 @@
-{
-  "catalyst": "Pt",
-  "co-catalyst": "Pt",
-  "light source": "UV",
-  "lamp": "LED",
-  "reaction medium": "Gas",
-  "reactor type": "Fluidised-bed",
-  "operation mode": "Continuous"
-}

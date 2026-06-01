@@ -1,9 +1,0 @@
-{
-  "catalyst": "CuTiO2",
-  "co-catalyst": "Cu",
-  "light source": "Solar Simulator",
-  "lamp": "Xenon",
-  "reaction medium": "not specific",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Continuous"
-}

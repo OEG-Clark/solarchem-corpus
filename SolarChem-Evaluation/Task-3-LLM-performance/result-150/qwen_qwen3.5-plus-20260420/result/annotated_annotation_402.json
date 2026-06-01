@@ -1,9 +1,0 @@
-{
-  "catalyst": "NiO/In2O3/TiO2",
-  "co-catalyst": "NiO, In2O3",
-  "light source": "UV",
-  "lamp": "Mercury",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Batch"
-}

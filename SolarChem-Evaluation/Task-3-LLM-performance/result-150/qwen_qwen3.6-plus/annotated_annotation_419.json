@@ -1,0 +1,9 @@
+{
+  "catalyst": "7.4-BiOIg-C 3 N 4",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

@@ -1,9 +1,0 @@
-{
-  "catalyst": "CuV-TiO2",
-  "co-catalyst": "Cu, V",
-  "light source": "Solar Simulator",
-  "lamp": "Tungsten",
-  "reaction medium": "Gas",
-  "reactor type": "Fixed-bed",
-  "operation mode": "Continuous"
-}

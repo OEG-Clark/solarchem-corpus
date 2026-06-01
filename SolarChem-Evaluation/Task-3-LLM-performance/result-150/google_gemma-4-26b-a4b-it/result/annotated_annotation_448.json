@@ -1,9 +1,0 @@
-{
-  "catalyst": "Na_{1-x}La_xTaO_{3x}",
-  "co-catalyst": "Pt, Ag, Au, CuO, NiO, RuO2",
-  "light source": "UV-Vis",
-  "lamp": "Mercury",
-  "reaction medium": "Liquid",
-  "reactor type": "Slurry",
-  "operation mode": "Batch"
-}
