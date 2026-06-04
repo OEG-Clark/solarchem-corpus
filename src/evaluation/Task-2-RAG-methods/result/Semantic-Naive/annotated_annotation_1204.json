@@ -1,0 +1,9 @@
+{
+  "catalyst": "C_3N_4",
+  "co-catalyst": "not specific",
+  "light source": "visible light",
+  "lamp": "LED",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

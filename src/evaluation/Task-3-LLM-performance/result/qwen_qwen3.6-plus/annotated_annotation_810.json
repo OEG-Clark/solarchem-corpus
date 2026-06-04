@@ -1,0 +1,9 @@
+{
+  "catalyst": "C-SnS2",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Halogen",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

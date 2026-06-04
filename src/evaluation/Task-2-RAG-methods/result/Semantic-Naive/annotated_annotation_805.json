@@ -1,0 +1,9 @@
+{
+  "catalyst": "CarbonTiO2",
+  "co-catalyst": "not specific",
+  "light source": "Solar",
+  "lamp": "Fluorescent",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "Rh(1)TiO2",
+  "co-catalyst": "not specific",
+  "light source": "Mercury lamp",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

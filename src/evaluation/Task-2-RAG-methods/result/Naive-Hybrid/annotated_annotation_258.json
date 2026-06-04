@@ -1,0 +1,9 @@
+{
+  "catalyst": "AgAgCl",
+  "co-catalyst": "not specific",
+  "light source": "UV-Vis",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "Cu2O-RGO",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

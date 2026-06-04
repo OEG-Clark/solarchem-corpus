@@ -1,0 +1,9 @@
+{
+  "catalyst": "KTaO3",
+  "co-catalyst": "Pt, Ag",
+  "light source": "Xenon arc lamp",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

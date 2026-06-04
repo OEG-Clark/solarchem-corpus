@@ -1,0 +1,9 @@
+{
+  "catalyst": "N-CMTS",
+  "co-catalyst": "Ru-dpbpy-N-CMTS",
+  "light source": "visible light",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ru(Bpy)3, Pt/TiO2, BrGly/Pt/TiO2, BrAsp/Pt/TiO2",
+  "co-catalyst": "Pt",
+  "light source": "UV-Vis",
+  "lamp": "daylight",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

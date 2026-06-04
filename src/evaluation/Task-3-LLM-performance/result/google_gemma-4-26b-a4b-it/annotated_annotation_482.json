@@ -1,0 +1,9 @@
+{
+  "catalyst": "Rh",
+  "co-catalyst": "Rh",
+  "light source": "UV",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

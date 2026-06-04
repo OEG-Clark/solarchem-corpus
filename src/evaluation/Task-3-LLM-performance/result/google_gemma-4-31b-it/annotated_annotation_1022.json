@@ -1,0 +1,9 @@
+{
+  "catalyst": "PD-COF-23",
+  "co-catalyst": "none",
+  "light source": "Monochromatic",
+  "lamp": "LED",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

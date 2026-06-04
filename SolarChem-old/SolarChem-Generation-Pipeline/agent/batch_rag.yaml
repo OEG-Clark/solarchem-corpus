@@ -1,0 +1,20 @@
+paths:
+  output_folder: "/home/jovyan/solarchem-corpus-main/SolarChem-Evaluation/Task-2-RAG-methods/result-150"
+
+
+model:
+  provider: "openrouter"
+  openrouter:
+    id: "google/gemma-4-26b-a4b-it"
+
+
+runs:
+  - { chunking: "Naive",     retrieval: "Naive" }
+  - { chunking: "Naive",     retrieval: "Hybrid" }
+  - { chunking: "Naive",     retrieval: "Rerank" }
+  - { chunking: "Recursive", retrieval: "Naive" }
+  - { chunking: "Recursive", retrieval: "Hybrid" }
+  - { chunking: "Recursive", retrieval: "Rerank" }
+  - { chunking: "Semantic",  retrieval: "Naive" }
+  - { chunking: "Semantic",  retrieval: "Hybrid" }
+  - { chunking: "Semantic",  retrieval: "Rerank" }

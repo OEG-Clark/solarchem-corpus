@@ -1,0 +1,9 @@
+{
+  "catalyst": "CuOTiO2",
+  "co-catalyst": "Cu",
+  "light source": "UV",
+  "lamp": "Tungsten-Halide",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

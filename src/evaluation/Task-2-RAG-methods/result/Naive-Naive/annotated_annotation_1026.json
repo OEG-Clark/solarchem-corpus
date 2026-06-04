@@ -1,0 +1,9 @@
+{
+  "catalyst": "WBCN",
+  "co-catalyst": "not specific",
+  "light source": "visible-light",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalyst",
+  "co-catalyst": "Pt",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

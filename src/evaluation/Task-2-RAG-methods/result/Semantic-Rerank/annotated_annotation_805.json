@@ -1,0 +1,9 @@
+{
+  "catalyst": "PteTiO2",
+  "co-catalyst": "Pt, carbonaceous material",
+  "light source": "visible light",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

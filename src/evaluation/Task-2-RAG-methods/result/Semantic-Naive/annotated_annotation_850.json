@@ -1,0 +1,9 @@
+{
+  "catalyst": "HC-C3N4Ni(OH)2",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

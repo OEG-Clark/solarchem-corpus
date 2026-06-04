@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "Fluorescent",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

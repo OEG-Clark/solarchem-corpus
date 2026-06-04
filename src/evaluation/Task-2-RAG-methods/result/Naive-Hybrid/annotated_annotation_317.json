@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalysts",
+  "co-catalyst": "rGO",
+  "light source": "Solar",
+  "lamp": "Fluorescent",
+  "reaction medium": "Liquid",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

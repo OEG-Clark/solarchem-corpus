@@ -1,0 +1,9 @@
+{
+  "catalyst": "m-CeO2/g-C3N4",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon-arc",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

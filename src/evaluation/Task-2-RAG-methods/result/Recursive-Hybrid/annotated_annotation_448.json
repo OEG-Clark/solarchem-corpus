@@ -1,0 +1,9 @@
+{
+  "catalyst": "NiO-Na_{1-x}La_xTaO_{3x}",
+  "co-catalyst": "Pt, CuO, NiO, Ag, Au",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

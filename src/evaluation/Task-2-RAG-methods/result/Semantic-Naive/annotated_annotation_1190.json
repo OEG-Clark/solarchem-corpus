@@ -1,0 +1,9 @@
+{
+  "catalyst": "MOF-808-Cu",
+  "co-catalyst": "not specific",
+  "light source": "Monochromatic",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "quartz reaction cell",
+  "operation mode": "Batch"
+}

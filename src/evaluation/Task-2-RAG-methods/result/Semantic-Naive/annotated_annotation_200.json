@@ -1,0 +1,9 @@
+{
+  "catalyst": "ZnO-RGO",
+  "co-catalyst": "RGO",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

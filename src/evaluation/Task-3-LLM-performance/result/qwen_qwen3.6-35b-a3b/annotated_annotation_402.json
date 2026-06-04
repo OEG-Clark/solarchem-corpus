@@ -1,0 +1,9 @@
+{
+  "catalyst": "photocatalyst",
+  "co-catalyst": "NiO, In2O3",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Monolithic",
+  "operation mode": "not specific"
+}

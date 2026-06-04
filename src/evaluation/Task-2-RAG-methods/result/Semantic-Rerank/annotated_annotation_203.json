@@ -1,0 +1,9 @@
+{
+  "catalyst": "CH4",
+  "co-catalyst": "noble metals",
+  "light source": "UV",
+  "lamp": "UV-vis lamps",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

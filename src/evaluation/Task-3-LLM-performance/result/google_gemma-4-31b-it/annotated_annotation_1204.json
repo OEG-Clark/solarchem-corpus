@@ -1,0 +1,9 @@
+{
+  "catalyst": "Tpy/mpg-C3N4",
+  "co-catalyst": "terpyridine",
+  "light source": "Visible",
+  "lamp": "LED",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "not specific"
+}

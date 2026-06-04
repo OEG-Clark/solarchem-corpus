@@ -1,0 +1,9 @@
+{
+  "catalyst": "0.5Ag-0.5Cu2OTiO2",
+  "co-catalyst": "Ag",
+  "light source": "Solar Simulator",
+  "lamp": "not specific",
+  "reaction medium": "Gas",
+  "reactor type": "Monolithic",
+  "operation mode": "Continuous"
+}

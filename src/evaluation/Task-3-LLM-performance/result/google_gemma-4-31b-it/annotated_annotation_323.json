@@ -1,0 +1,9 @@
+{
+  "catalyst": "PdTiO2",
+  "co-catalyst": "not specific",
+  "light source": "UV",
+  "lamp": "LED",
+  "reaction medium": "Gas",
+  "reactor type": "Fluidised-bed",
+  "operation mode": "Continuous"
+}
