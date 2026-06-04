@@ -1,0 +1,9 @@
+{
+  "catalyst": "BaZrO3",
+  "co-catalyst": "Ag, Au, Pt",
+  "light source": "UV",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

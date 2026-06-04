@@ -1,0 +1,9 @@
+{
+  "catalyst": "not specific",
+  "co-catalyst": "Pt",
+  "light source": "Visible",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

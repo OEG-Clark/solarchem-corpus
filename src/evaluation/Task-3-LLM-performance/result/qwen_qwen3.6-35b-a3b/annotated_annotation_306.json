@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ag",
+  "co-catalyst": "Ag",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Fluidised-bed",
+  "operation mode": "Continuous"
+}

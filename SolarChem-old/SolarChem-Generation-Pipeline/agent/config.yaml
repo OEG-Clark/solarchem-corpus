@@ -1,0 +1,167 @@
+paths:
+  input_folder:  "/home/jovyan/solarchem-corpus-main/SolarChem-Dataset/SolarChemQA-Dataset-json/paper_extraction_sample"
+  output_folder: "/home/jovyan/solarchem-corpus-main/SolarChem-Evaluation/Task-2-RAG-methods/result-150"
+
+
+model:
+  provider: "openrouter"
+  max_tokens: 65536
+
+  ollama:
+    id: "qwen3:30b"
+    host: "http://localhost:11434"
+
+  deepseek:
+    id: "deepseek-reasoner"
+    api_key: "sk-xxx"
+
+  openrouter:
+    id: "qwen/qwen3.6-plus"
+    api_key: "sk-or-v1-xxx"
+
+
+agents:
+  default_retries: 2
+
+
+rag:
+  chunking:  "Naive"
+  retrieval: "Naive"
+
+
+runtime:
+  chunk_size: 1024
+  overlap: 128
+  top_k: 5
+
+  paper_sections:
+    - "Paper Title"
+    - "Abstract"
+    - "Experimental"
+    - "Results and discussion"
+    - "Conclusions"
+  doi_field: "Doi"
+  title_field: "Paper Title"
+
+  inter_call_sleep: 5
+  inter_paper_sleep: 60
+  source_match_threshold: 100
+
+
+categories:
+  catalyst:
+    definition: >-
+      A substance that increases the rate of a reaction without modifying the
+      overall standard Gibbs energy change in the reaction
+    choices: >-
+      The answer should be purely chemical symbols to represent one chemical
+      compound or element
+
+  co-catalyst:
+    definition: >-
+      A substance or agent that brings about catalysis in conjunction with one
+      or more others
+    choices: >-
+      The answer should be purely chemical symbols to represent one or multiple
+      chemical compounds or elements
+
+  light source:
+    definition: >-
+      A light source is an optical subsystem that provides light for use in a
+      distant area using a delivery system.
+    choices: "UV, Solar, UV-Vis, Monochromatic, Solar Simulator, Visible"
+
+  lamp:
+    definition: A device that generates heat, light, or any other form of radiation
+    choices: "Fluorescent, Mercury, Halogen, Mercury-Xenon, LED, Tungsten, Xenon, Tungsten-Halide, Solar Simulator"
+
+  reaction medium:
+    definition: The medium used for the reaction of the experiment execution
+    choices: "Liquid, Gas"
+
+  reactor type:
+    definition: >-
+      The condition of the reactor device that performs the process of a
+      photocatalysis reaction
+    choices: "Slurry, Fixed-bed, Optical Fiber, Monolithic, Membrane, Fluidised-bed"
+
+  operation mode:
+    definition: >-
+      The condition whether the operation is performed in batch-mode or
+      continuous-mode
+    choices: "Batch, Continuous"
+
+
+queries:
+  catalyst:        "What is the photocatalyst used in the experiment described in the paper?"
+  co-catalyst:     "What co-catalyst is paired with the main catalyst in the experiment?"
+  light source:    "What type of light source drives the photocatalytic reaction in the experiment?"
+  lamp:            "What lamp is used as the illumination device in the experiment?"
+  reaction medium: "Is the photocatalytic reaction medium a liquid or a gas?"
+  reactor type:    "What reactor configuration is used to perform the experiment?"
+  operation mode:  "Is the reactor operated in batch mode or continuous mode?"
+
+
+prompts:
+
+  extract:
+    name: "SolarChem Evidence Extractor"
+    role: "Solar-chemistry annotation specialist"
+    instructions: |
+      You are an expert annotator for solar-chemistry experimental papers.
+      Your job is to read a section of a paper and identify mentions of the
+      following 7 experimental settings:
+
+      catalyst: A substance that increases the rate of a reaction without
+        modifying the overall standard Gibbs energy change in the reaction.
+      co-catalyst: A substance or agent that brings about catalysis in
+        conjunction with one or more others.
+      light source: An optical subsystem that provides light for use in a
+        distant area. Possible choices: UV, Solar, UV-Vis, Monochromatic,
+        Solar Simulator, Visible.
+      lamp: A device that generates heat, light, or any other form of
+        radiation. Possible choices: Fluorescent, Mercury, Halogen,
+        Mercury-Xenon, LED, Tungsten, Xenon, Tungsten-Halide, Solar Simulator.
+      reaction medium: The medium used for the reaction. Possible choices:
+        Liquid, Gas.
+      reactor type: The reactor device performing the photocatalysis reaction.
+        Possible choices: Slurry, Fixed-bed, Optical Fiber, Monolithic,
+        Membrane, Fluidised-bed.
+      operation mode: Whether the operation is batch- or continuous-mode.
+        Possible choices: Batch, Continuous, Batch/Continuous.
+
+      For every mention you find, return:
+        - category: one of the 7 categories above
+        - inferences: the actual value / selection inferred from the text
+        - source: the EXACT verbatim sentence (or sentences) from the provided
+          context that supports the inference. Do not paraphrase the source.
+          copy it as-is from the input text.
+
+      If no relevant mention exists in the section, return an empty list of
+      evidences. Always populate the `analysis` field with a brief description
+      of your reasoning.
+    prompt_template: |
+      Please analyse the following section and extract any of the 7 mentions
+      defined in your instructions.
+
+      Section content:
+      ---
+      {context}
+      ---
+
+  annotate:
+    name: "SolarChem Single-Evidence Annotator"
+    role: "Solar-chemistry annotation specialist"
+    instructions: |
+      You are identifying a single experimental setting in a solar-chemistry
+      paper given one piece of supporting evidence. Reply ONLY with the value
+      of the setting.
+    prompt_template: |
+      Here is an extracted quote from a solar chemistry paper which describes
+      an experiment setting used in a solar chemistry experiment. Can you
+      please help me to identify the experiment setting?
+
+      Experiment Setting: {category}
+      Experiment Setting Definition: {definition}
+      Possible Choices: {choices}
+      Evidence: {evidence}

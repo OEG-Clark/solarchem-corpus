@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2-MnO_x-Pt",
+  "co-catalyst": "Pt",
+  "light source": "Xenon lamp",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "not specific"
+}

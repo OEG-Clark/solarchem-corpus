@@ -1,0 +1,9 @@
+{
+  "catalyst": "CdSe-graphene, CdSe-graphene-TiO2",
+  "co-catalyst": "not specific",
+  "light source": "metal halide",
+  "lamp": "Halogen",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

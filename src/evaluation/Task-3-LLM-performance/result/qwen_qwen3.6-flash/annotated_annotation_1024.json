@@ -1,0 +1,9 @@
+{
+  "catalyst": "SrTiO3:Rh",
+  "co-catalyst": "Ag, Au, Ru, Cu, Pt",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "not specific",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

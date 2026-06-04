@@ -1,0 +1,9 @@
+{
+  "catalyst": "RuBpy.TiO2, BrGly.TiO2, BrAsp.TiO2",
+  "co-catalyst": "Pt",
+  "light source": "Solar Simulator",
+  "lamp": "Solar Simulator",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

@@ -1,0 +1,9 @@
+{
+  "catalyst": "PtTiO2",
+  "co-catalyst": "Pt, rGO",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "not specific"
+}

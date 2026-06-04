@@ -1,0 +1,9 @@
+{
+  "catalyst": "Tpy 0.01 mpg-C3N4",
+  "co-catalyst": "C15H11N3",
+  "light source": "Visible",
+  "lamp": "LED",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

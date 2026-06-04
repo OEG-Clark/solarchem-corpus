@@ -1,0 +1,9 @@
+{
+  "catalyst": "CuCdS-TiO2SiO2",
+  "co-catalyst": "not specific",
+  "light source": "Solar Simulator",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Continuous"
+}

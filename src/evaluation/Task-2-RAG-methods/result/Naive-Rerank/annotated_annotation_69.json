@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2",
+  "co-catalyst": "Pt",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "not specific",
+  "reactor type": "none",
+  "operation mode": "Batch"
+}

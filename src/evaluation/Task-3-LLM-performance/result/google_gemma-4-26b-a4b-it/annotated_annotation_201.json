@@ -1,0 +1,9 @@
+{
+  "catalyst": "N2",
+  "co-catalyst": "Cu",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

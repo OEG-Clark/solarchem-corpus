@@ -1,0 +1,9 @@
+{
+  "catalyst": "Au 3 Pd 1 3DOM-TiO 2",
+  "co-catalyst": "metal NPs",
+  "light source": "Monochromatic",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Membrane",
+  "operation mode": "Batch"
+}

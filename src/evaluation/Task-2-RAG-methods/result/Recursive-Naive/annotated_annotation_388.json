@@ -1,0 +1,9 @@
+{
+  "catalyst": "g-C3N4",
+  "co-catalyst": "none",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon-arc",
+  "reaction medium": "Gas",
+  "reactor type": "not specific",
+  "operation mode": "not specific"
+}

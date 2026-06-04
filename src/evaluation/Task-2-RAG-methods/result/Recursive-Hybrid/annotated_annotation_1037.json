@@ -1,0 +1,9 @@
+{
+  "catalyst": "CsPbBr3-GO NHS",
+  "co-catalyst": "not specific",
+  "light source": "Monochromatic",
+  "lamp": "Xenon",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

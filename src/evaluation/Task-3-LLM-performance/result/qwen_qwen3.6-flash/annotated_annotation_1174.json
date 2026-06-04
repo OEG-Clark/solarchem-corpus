@@ -1,0 +1,9 @@
+{
+  "catalyst": "CoO-CuO-TiO2-CeO2",
+  "co-catalyst": "CuO",
+  "light source": "Solar",
+  "lamp": "not specific",
+  "reaction medium": "Gas",
+  "reactor type": "Fixed-bed",
+  "operation mode": "Batch"
+}

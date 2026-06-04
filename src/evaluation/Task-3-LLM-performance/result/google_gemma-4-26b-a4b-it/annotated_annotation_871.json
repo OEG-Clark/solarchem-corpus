@@ -1,0 +1,9 @@
+{
+  "catalyst": "CDNH 2 -UiO-66",
+  "co-catalyst": "CDs",
+  "light source": "Visible",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

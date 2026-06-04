@@ -1,0 +1,9 @@
+{
+  "catalyst": "AgTiO2",
+  "co-catalyst": "Ag",
+  "light source": "UV",
+  "lamp": "Mercury",
+  "reaction medium": "Gas",
+  "reactor type": "Slurry",
+  "operation mode": "Batch"
+}

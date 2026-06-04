@@ -1,0 +1,9 @@
+{
+  "catalyst": "TiO2",
+  "co-catalyst": "Ag",
+  "light source": "UV",
+  "lamp": "UVA",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "Batch"
+}

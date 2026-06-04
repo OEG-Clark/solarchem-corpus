@@ -1,12 +1,26 @@
-# SolarChem QA-RAG Benchmark & Dataset
+# SolarChemQA Benchmark & Dataset
 
-This repository contains the benchmark and dataset for [SolarQA](https://github.com/oeg-upm/solar-qa) application. The SolarChem QA-RAG Benchmark is designed specifically for factual question answering benchmark based on solar chemistry academic papers. We intent to build an open-source benchmark & dataset for testing the performance of QA system when it comes to narrow-domain and in-depth questions. 
+This repository contains the benchmark and dataset for [SolarQA](https://github.com/oeg-upm/solar-qa) application. The SolarChemQA Benchmark is designed specifically for factual question answering benchmark based on solar chemistry academic papers. We intent to build an open-source benchmark & dataset for testing the performance of QA system when it comes to narrow-domain and in-depth questions. 
 
-The SolarChem QA-RAG Benchmark addresses the critical need for domain-specific evaluation tools in scientific literature processing. It aims to:
+The SolarChemQA Benchmark addresses the critical need for domain-specific evaluation tools in scientific literature processing. It aims to:
 
 - Build an open-source benchmark for testing QA system performance on narrow-domain, in-depth questions
 - Provide rigorous assessment capabilities for LLM-driven QA systems processing scientific content
 - Enable comprehensive evaluation of retrieval-augmented generation (RAG) strategies in solar chemistry
+
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+export OPENROUTER_API_KEY="your-key"
+```
+
+The OpenRouter key is used by the generation pipeline and by the qwen3-embedding-8b encoder in the evaluation notebooks. Task 1 runs its embeddings through a local [Ollama](https://ollama.com) server instead, so it additionally needs:
+
+```bash
+ollama pull qwen3-embedding:8b
+```
 
 ## SolarChemQA Annotation Pipeline
 
@@ -22,6 +36,7 @@ The SolarChem Annotation Pipeline is the evidence extraction component that proc
 
 Details for all seven experimental parameters is given at [SolarChem Ontology](https://solarchem.github.io/solarchem-ontology/docs/release/1.1.0/core/index-en.html)
 
+
 ## SolarChem Generation Pipeline
 
 The SolarChem Generation Pipeline represents the complete end-to-end system that takes extracted paper data and generates all seven experimental parameters from the paper. The pipeline first enables the SolarChem Annotation Pipeline to generate all evidence (extract quota from the paper) with corresponding experimental parameters. And then the pipeline incorporates large language models to infer all seven experimental parameters based on the evidence and the generated possible answers.
@@ -30,9 +45,40 @@ Word Flow:
 
 ![wordflow~](/img/agent_anno.png)
 
+The implementation is under `src/generation`. A single run is configured in `config.yaml` (model, RAG strategy, prompts and queries), and writes one `evidences_<id>.json` and one `annotated_annotation_<id>.json` per paper:
+
+```bash
+cd src/generation
+python generate.py --config config.yaml
+```
+
+Sweeps over RAG configurations or models reuse the same base config through overlay files:
+
+```bash
+python batch.py --batch batch_rag.yaml    # 9 chunking-retrieval combinations (Task 2)
+python batch.py --batch batch_eval.yaml   # 8 LLMs under Naive-Naive (Task 3)
+```
+
+Both batch files write into the `result/` folders under `src/evaluation`, and papers with an existing output file are skipped, so re-running against the released results costs nothing.
+
+
+
+
 ## SolarChemQA Dataset
 
+
 SolarChemQA provides a novel question answering dataset curated from solar chemistry literature, designed to rigorously assess the capabilities of LLM-driven QA systems in processing domain-specific scientific content. 
+
+### Dataset Statistics
+
+The foundational corpus contains 1,096 solar chemistry papers (1979-2022) from the Art Leaf dataset, each annotated by a domain expert with the seven experimental parameters, for 7,672 annotations in total. Filtering for openly available papers that report a single photocatalytic experiment leaves 294 papers with 2,058 annotations, which is the filtered SolarChemQA dataset used for the benchmark. From these, 150 papers (1,050 annotations) are sampled for the LLM evaluation, and 21 papers are further annotated with 291 sentence-level evidences (217 positive, 74 negative) for the retrieval evaluation, validated independently by at least two annotators.
+
+- Query Sub-Dataset: Standardized queries for the seven experimental parameter categories (see `queries` in `src/generation/config.yaml`)
+- Paper Extraction Sub-Dataset: Structured content extracted from research papers
+- Annotation Sub-Dataset: Expert-validated annotations and the supporting textual sentences
+
+
+<!-- SolarChemQA provides a novel question answering dataset curated from solar chemistry literature, designed to rigorously assess the capabilities of LLM-driven QA systems in processing domain-specific scientific content. 
 
 ### SolarChemQA-Dataset-json
 
@@ -52,11 +98,12 @@ SolarChemQA-Dataset-Updated/
 ├── extracted_paper/                    # Raw extracted paper contents (623 papers)
 ├── domain_expert_annotated_sources/    # Expert-validated annotations
 └── [Additional structured data directories]
-```
+``` -->
+
 
 ## SolarChemQA Evaluation: The Benchmark
 
-This repository also provides comprehensive benchmark tasks and evaluation methodologies for the SolarChemQA dataset. The benchmark is designed to evaluate LLM-driven QA systems across three critical dimensions in solar chemistry literature.
+
 
 ### Task 1: Information Retrieval Evaluation
 Assesses the effectiveness of different retrieval strategies in accessing relevant information from solar chemistry papers.
@@ -99,21 +146,24 @@ Metrics:
 - Lexical matching (partial_ratio algorithm)
 
 
-Arguments:
-- input_file_dir: Path of raw extracted paper contents folder
-- res_file_dir: Path for saving the evaluated result folder
-- chunk_type: Naive, Recursive, Semantic.
-- rank_type: Naive, Rerank, Hybrid.
-- chunk_size: The maximum number of characters or tokens allowed in a single chunk
--overlap: Overlap between chunks ensures that information at the boundaries is not lost or contextually isolated.
-```python
-python Eval_RAG.py --input_file_dir ".../SolarChemQA-Dataset-Updated/extracted_paper" \
-                   --res_file_dir ".../SolarChem-Evaluation/results/" \
-                   --chunk_type "Semantic" \
-                   --rank_type "Hybrid" \
-                   --chunk_size "1028" \
-                   --overlap "128"
+Usage:
+
+Step 1: generate the predictions for the nine RAG configurations, with gemma-4-26b-a4b-it as the fixed LLM. The released predictions are already under `result/` and existing files are skipped, so this step only costs API calls if you delete them first.
+
+```bash
+cd src/generation
+python batch.py --batch batch_rag.yaml
 ```
+
+Step 2: score the predictions against the ground truth.
+
+```bash
+cd ../evaluation/Task-2-RAG-methods
+python task2_evaluation.py --results_dir ./result-150/ --ground_truth ./ground_truth.json --vecs_cache ./vecs.pkl --json_out ./task2_evaluation.json
+```
+
+Run all cells. The notebook embeds every answer with qwen3-embedding-8b (cached in `src/evaluation/embedding_cache.pkl`), prints the per-category table.
+
 
 ### Task 3: LLM Performance Evaluation
 Compares the capabilities of various LLMs in understanding and answering questions about solar chemistry experiments.
@@ -130,23 +180,26 @@ Metrics:
 - Lexical matching (partial_ratio algorithm)
 
 
-Arguments:
-- input_file_dir: Path of raw extracted paper contents folder
-- res_file_dir: Path for saving the evaluated result folder
-- chunk_type: Naive, Recursive, Semantic.
-- rank_type: Naive, Rerank, Hybrid.
-- chunk_size: The maximum number of characters or tokens allowed in a single chunk
--overlap: Overlap between chunks ensures that information at the boundaries is not lost or contextually isolated.
+Usage:
+
+Step 1: generate the predictions of the eight LLMs, all under the Naive-Naive RAG configuration selected in Task 2. As in Task 2, the released predictions are already under `result/` and are skipped on re-run.
+
 ```bash
-python Eval_RAG.py --input_file_dir ".../SolarChemQA-Dataset-Updated/extracted_paper" \
-                   --res_file_dir ".../SolarChem-Evaluation/results/" \
-                   --chunk_type "Semantic" \
-                   --rank_type "Hybrid" \
-                   --chunk_size "1028" \
-                   --overlap "128"
+cd src/generation
+python batch.py --batch batch_eval.yaml
 ```
 
-## Benchmark Results on SolarChemQA-Dataset-Json
+Step 2: score the predictions and produce the figures.
+
+```bash
+cd ../evaluation/Task-3-LLM-performance
+python task3_evaluation.py --results_dir ./result-150/ --ground_truth ./ground_truth.json --vecs_cache ./vecs.pkl --json_out ./task3_evaluation.json --output_dir figures/
+```
+
+Run all cells. The notebook prints the per-category tables and writes `task3_metrics.csv`, the leaderboard figure and the heatmaps into `figures/`. It shares the embedding cache and the scoring rules with the Task 2 notebook, so the gemma-4-26b-a4b-it Naive-Naive values match between the two tasks.
+
+
+## Benchmark Results
 
 Our benchmark results are available in the results/ directory, including:
 - Comparative analysis of retrieval strategies
@@ -168,28 +221,54 @@ Our benchmark results are available in the results/ directory, including:
 | Average           | 0.2985         | 0.2779    | **0.3477**       | 0.3091    | **0.3815**| 0.2836    |
 
 
-### Task 2:
+### Task 2: RAG Configuration Evaluation
 
-| Chunking-Retrieval | Metric | Catalyst | Co-Catalyst | Light Source | Lamp | Reactor Type | Reaction Medium | Operation Mode | Average |
-|--------------------|--------|----------|-------------|--------------|------|--------------|-----------------|----------------|---------|
-| Naive-Naive        | cos_sim | 0.6830 | 0.6218 | 0.7059 | 0.9338 | 0.5661 | 0.8339 | 0.8258 | 0.7386 |
-|                    | ratio   | 0.3902 | 0.3415 | 0.4024 | 0.8415 | 0.0854 | 0.5732 | 0.5610 | 0.4565 |
-| Naive-Hybrid       | cos_sim | 0.7016 | 0.6221 | 0.7280 | 0.9296 | 0.5639 | 0.8233 | 0.7570 | 0.7322 |
-|                    | ratio   | 0.4756 | 0.3049 | 0.4268 | 0.8049 | 0.0732 | 0.5610 | 0.3780 | 0.4321 |
-| Naive-Rerank       | cos_sim | 0.6593 | 0.6428 | 0.7222 | 0.7990 | 0.5704 | 0.7786 | 0.7253 | 0.6997 |
-|                    | ratio   | 0.4268 | 0.3780 | 0.4390 | 0.5122 | 0.0488 | 0.4512 | 0.2927 | 0.3641 |
-| Recursive-Naive    | cos_sim | 0.6649 | 0.6051 | 0.7013 | 0.9419 | 0.5839 | 0.7889 | 0.8189 | 0.7293 |
-|                    | ratio   | 0.3780 | 0.3293 | 0.3537 | 0.8659 | 0.0976 | 0.5122 | 0.5366 | 0.4390 |
-| Recursive-Hybrid   | cos_sim | 0.6834 | 0.6191 | 0.7299 | 0.9307 | 0.5707 | 0.8281 | 0.7079 | 0.7243 |
-|                    | ratio   | 0.5000 | 0.3049 | 0.4634 | 0.8293 | 0.0854 | 0.5732 | 0.2439 | 0.4286 |
-| Recursive-Rerank   | cos_sim | 0.6807 | 0.6170 | 0.7361 | 0.7967 | 0.5769 | 0.7647 | 0.6762 | 0.6926 |
-|                    | ratio   | 0.4146 | 0.3293 | 0.4878 | 0.5122 | 0.0610 | 0.3902 | 0.1585 | 0.3362 |
-| Semantic-Naive     | cos_sim | 0.6868 | 0.6215 | 0.7188 | 0.8769 | 0.5546 | 0.8622 | 0.8208 | 0.7345 |
-|                    | ratio   | 0.4390 | 0.3293 | 0.4268 | 0.6829 | 0.0732 | 0.6220 | 0.5610 | 0.4477 |
-| Semantic-Hybrid    | cos_sim | 0.6901 | 0.6308 | 0.6708 | 0.8998 | 0.5639 | 0.8786 | 0.7632 | 0.7282 |
-|                    | ratio   | 0.5366 | 0.4512 | 0.3902 | 0.7561 | 0.0854 | 0.6585 | 0.4146 | 0.4703 |
-| Semantic-Rerank    | cos_sim | 0.6640 | 0.6449 | 0.7370 | 0.8083 | 0.5607 | 0.8400 | 0.7495 | 0.7149 |
-|                    | ratio   | 0.4268 | 0.3780 | 0.5122 | 0.5244 | 0.0366 | 0.5854 | 0.3415 | 0.4007 |
+Table：Performance evaluation of different RAG strategies across experiment parameter categories under the fixed LLM (gemma-4-26b-a4b-it) and embedding model (qwen3-embedding-8b)
 
-Task 3:
+| RAG Config | Metric | Catalyst | Co-Catalyst | Light Source | Lamp | Reactor Type | Reaction Medium | Operation Mode | Average |
+|---|---|---|---|---|---|---|---|---|---|
+| Naive-Naive | cos_sim | 0.6271 | 0.6249 | 0.6338 | 0.8562 | 0.7078 | 0.9390 | 0.8782 | 0.7524 |
+| Naive-Naive | ratio | 0.6486 | 0.4577 | 0.5571 | 0.8693 | 0.5219 | 0.7123 | 0.6302 | 0.6282 |
+| Naive-Hybrid | cos_sim | 0.6176 | 0.6187 | 0.6475 | 0.8419 | 0.6836 | 0.9243 | 0.8910 | 0.7464 |
+| Naive-Hybrid | ratio | 0.6557 | 0.4335 | 0.5608 | 0.8410 | 0.5005 | 0.7093 | 0.6186 | 0.6170 |
+| Naive-Rerank | cos_sim | 0.6291 | 0.6175 | 0.6768 | 0.7587 | 0.5791 | 0.8829 | 0.7874 | 0.7045 |
+| Naive-Rerank | ratio | 0.6837 | 0.4434 | 0.5265 | 0.7742 | 0.2590 | 0.6542 | 0.4817 | 0.5461 |
+| Recursive-Naive | cos_sim | 0.6199 | 0.6232 | 0.6494 | 0.8468 | 0.6711 | 0.9477 | 0.8779 | 0.7480 |
+| Recursive-Naive | ratio | 0.6846 | 0.4605 | 0.5833 | 0.8632 | 0.4553 | 0.7291 | 0.6484 | 0.6321 |
+| Recursive-Hybrid | cos_sim | 0.5942 | 0.6026 | 0.6307 | 0.8428 | 0.6843 | 0.9139 | 0.8663 | 0.7335 |
+| Recursive-Hybrid | ratio | 0.6676 | 0.4659 | 0.5388 | 0.8410 | 0.4747 | 0.7037 | 0.6080 | 0.6142 |
+| Recursive-Rerank | cos_sim | 0.6337 | 0.6027 | 0.6627 | 0.7132 | 0.5815 | 0.8754 | 0.7984 | 0.6954 |
+| Recursive-Rerank | ratio | 0.6507 | 0.4633 | 0.5819 | 0.7280 | 0.2543 | 0.6371 | 0.4960 | 0.5445 |
+| Semantic-Naive | cos_sim | 0.6025 | 0.5938 | 0.6442 | 0.8184 | 0.6896 | 0.9329 | 0.8910 | 0.7389 |
+| Semantic-Naive | ratio | 0.6393 | 0.4153 | 0.5999 | 0.8371 | 0.5122 | 0.7351 | 0.6607 | 0.6285 |
+| Semantic-Hybrid | cos_sim | 0.6518 | 0.6156 | 0.6608 | 0.8217 | 0.6766 | 0.9341 | 0.8702 | 0.7472 |
+| Semantic-Hybrid | ratio | 0.6533 | 0.4366 | 0.5951 | 0.8451 | 0.4827 | 0.6958 | 0.6165 | 0.6179 |
+| Semantic-Rerank | cos_sim | 0.6191 | 0.6106 | 0.6674 | 0.7370 | 0.6329 | 0.8939 | 0.8126 | 0.7105 |
+| Semantic-Rerank | ratio | 0.6183 | 0.4505 | 0.5746 | 0.7440 | 0.3641 | 0.6155 | 0.5220 | 0.5556 |
+
+Task 3: LLM Benchmark
+
+Leaderboard:
+
 ![leaderboard~](/img/llm_performance_solarchemqa.png)
+
+Table: Per-category performance of the evaluated LLMs under the Naive-Naive RAG configuration with the qwen3-embedding-8b encoder
+
+| Model | Metric | Catalyst | Co-Catalyst | Light Source | Lamp | Reactor Type | Reaction Medium | Operation Mode | Average |
+|---|---|---|---|---|---|---|---|---|---|
+| qwen3.6-plus | cos_sim | 0.6666 | 0.6183 | 0.7124 | 0.8391 | 0.7230 | 0.9479 | 0.8974 | 0.7721 |
+| qwen3.6-plus | ratio | 0.6725 | 0.4338 | 0.5943 | 0.8595 | 0.5666 | 0.7574 | 0.6812 | 0.6522 |
+| qwen3.6-27b | cos_sim | 0.6941 | 0.6245 | 0.7108 | 0.8311 | 0.6982 | 0.9449 | 0.8827 | 0.7695 |
+| qwen3.6-27b | ratio | 0.6828 | 0.4641 | 0.5707 | 0.8385 | 0.5006 | 0.7197 | 0.6500 | 0.6324 |
+| qwen3.6-flash | cos_sim | 0.6126 | 0.6101 | 0.7084 | 0.8415 | 0.6933 | 0.9429 | 0.8904 | 0.7570 |
+| qwen3.6-flash | ratio | 0.5363 | 0.4482 | 0.4995 | 0.8453 | 0.4953 | 0.7303 | 0.6674 | 0.6032 |
+| gemma-4-26b-a4b-it | cos_sim | 0.6128 | 0.6288 | 0.6539 | 0.8453 | 0.7211 | 0.9365 | 0.8888 | 0.7553 |
+| gemma-4-26b-a4b-it | ratio | 0.6269 | 0.4428 | 0.5815 | 0.8513 | 0.5729 | 0.7172 | 0.6461 | 0.6341 |
+| gemma-4-31b-it | cos_sim | 0.6146 | 0.6172 | 0.7286 | 0.8324 | 0.6618 | 0.9446 | 0.8446 | 0.7491 |
+| gemma-4-31b-it | ratio | 0.7324 | 0.4038 | 0.6101 | 0.8323 | 0.4357 | 0.7377 | 0.5913 | 0.6205 |
+| qwen3.6-35b-a3b | cos_sim | 0.5735 | 0.6048 | 0.7021 | 0.8271 | 0.7002 | 0.9444 | 0.8914 | 0.7491 |
+| qwen3.6-35b-a3b | ratio | 0.5066 | 0.4054 | 0.5183 | 0.8431 | 0.5212 | 0.7357 | 0.6846 | 0.6021 |
+| deepseek-v4-pro | cos_sim | 0.5535 | 0.6045 | 0.7590 | 0.8038 | 0.6831 | 0.8781 | 0.8546 | 0.7338 |
+| deepseek-v4-pro | ratio | 0.4480 | 0.3715 | 0.6179 | 0.8028 | 0.4661 | 0.5957 | 0.6350 | 0.5624 |
+| deepseek-v4-flash | cos_sim | 0.5570 | 0.6104 | 0.7445 | 0.8103 | 0.6694 | 0.8610 | 0.8256 | 0.7255 |
+| deepseek-v4-flash | ratio | 0.3916 | 0.3675 | 0.5339 | 0.8363 | 0.4416 | 0.6001 | 0.5701 | 0.5344 |

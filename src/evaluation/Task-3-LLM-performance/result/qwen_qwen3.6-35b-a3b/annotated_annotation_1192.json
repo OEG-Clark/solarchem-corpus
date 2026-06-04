@@ -1,0 +1,9 @@
+{
+  "catalyst": "Ru(bpy)3Cl2",
+  "co-catalyst": "Ru(bpy)3Cl2",
+  "light source": "Solar Simulator",
+  "lamp": "Xenon",
+  "reaction medium": "Liquid",
+  "reactor type": "not specific",
+  "operation mode": "not specific"
+}
