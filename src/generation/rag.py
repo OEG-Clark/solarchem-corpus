@@ -16,7 +16,7 @@ from langchain_core.documents import Document
 from langchain_openai import OpenAIEmbeddings
 
 
-# DEFAULT_EMBEDDING_MODEL = "avr/sfr-embedding-mistral:latest"
+DEFAULT_EMBEDDING_MODEL = "qwen/qwen3-embedding-8b"
 DEFAULT_RERANK_MODEL = "rank-T5-flan"
 DEFAULT_HYBRID_WEIGHTS = (0.5, 0.5)
 
@@ -52,7 +52,7 @@ class Ragger:
         self.rerank_model = rerank_model
         self.hybrid_weights = list(hybrid_weights)
         self.embeddings = OpenAIEmbeddings(
-            model="qwen/qwen3-embedding-8b",
+            model=embedding_model,
             base_url="https://openrouter.ai/api/v1",
             api_key="sk-or-v1-xxx",
             check_embedding_ctx_length=False,
