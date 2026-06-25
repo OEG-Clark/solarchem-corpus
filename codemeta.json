@@ -1,0 +1,154 @@
+{
+    "@context": "https://w3id.org/codemeta/3.0",
+    "@type": [
+        "SoftwareSourceCode",
+        "SoftwareApplication"
+    ],
+    "name": "solarchem-corpus",
+    "description": "A corpus for validating QA over solar chemistry papers",
+    "codeRepository": "https://github.com/oeg-upm/solarchem-corpus",
+    "downloadUrl": "https://github.com/oeg-upm/solarchem-corpus/releases",
+    "license": "https://spdx.org/licenses/Apache-2.0",
+    "dateCreated": "2025-01-31",
+    "dateModified": "2026-06-25",
+    "programmingLanguage": [
+        "Python",
+        "Jupyter Notebook"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Ziyuan",
+            "familyName": "Wang",
+            "name": "Ziyuan Wang",
+            "email": "ziyuan.wang@upm.es",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Ontology Engineering Group, Universidad Politécnica de Madrid"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Daniel",
+            "familyName": "Garijo",
+            "name": "Daniel Garijo",
+            "email": "daniel.garijo@upm.es",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Ontology Engineering Group, Universidad Politécnica de Madrid"
+            }
+        }
+    ],
+    "softwareRequirements": [
+        {
+            "@type": "SoftwareApplication",
+            "name": "pyyaml",
+            "version": "==6.0.2"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "pydantic",
+            "version": "==2.10.6"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "numpy",
+            "version": "==1.26.4"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "pandas",
+            "version": "==2.2.3"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "matplotlib",
+            "version": "==3.9.4"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "thefuzz",
+            "version": "==0.22.1"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "fuzzywuzzy",
+            "version": "==0.18.0"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "python-Levenshtein",
+            "version": "==0.26.1"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "rank-bm25",
+            "version": "==0.2.2"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "flashrank",
+            "version": "==0.2.10"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "faiss-cpu",
+            "version": "==1.9.0"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "scikit-learn",
+            "version": "==1.6.1"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "sentence-transformers",
+            "version": "==3.4.1"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "agno",
+            "version": "==1.1.1"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain",
+            "version": "==0.3.18"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-core",
+            "version": "==0.3.35"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-community",
+            "version": "==0.3.17"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-text-splitters",
+            "version": "==0.3.6"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-experimental",
+            "version": "==0.3.4"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-openai",
+            "version": "==0.3.6"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-ollama",
+            "version": "==0.2.3"
+        },
+        {
+            "@type": "SoftwareApplication",
+            "name": "langchain-google-genai",
+            "version": "==2.0.9"
+        }
+    ]
+}
