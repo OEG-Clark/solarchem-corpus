@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "SolarChemQA: A Dataset and Benchmark for LLM-Driven QA in Solar Chemistry"
+message: "If you use this software or dataset, please cite it as below."
+type: software
+authors:
+  - given-names: Ziyuan
+    family-names: Wang
+    email: ziyuan.wang@upm.es
+    affiliation: "Ontology Engineering Group, Universidad Politécnica de Madrid"
+  - given-names: Daniel
+    family-names: Garijo
+    affiliation: "Ontology Engineering Group, Universidad Politécnica de Madrid"
+repository-code: "https://github.com/oeg-upm/solarchem-corpus"
+license: Apache-2.0
+version: 1.0.2
+date-released: "2026-06-25"
+identifiers:
+  - description: This is the collection of archived snapshots of all versions of SolarChemQA dataset and software
+    type: doi
+    value: "10.5281/zenodo.20624820"
+keywords:
+  - question answering
+  - benchmark
+  - scholar dataset
+  - solar chemistry
+  - large language models
+  - retrieval-augmented generation
